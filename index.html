@@ -1,0 +1,1574 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dr. Mit Panchani | MD Medicine · 2D Echocardiographer</title>
+  <meta name="description" content="Dr. Mit Panchani — MBBS, MD General Medicine, PGCIH, Fellow in 2D Echocardiography. Internal medicine specialist offering OPD and telemedicine consultations."/>
+  <link rel="canonical" href="https://drmjp93.in/"/>
+  <!-- Fonts: system stack only — zero network requests, instant render -->
+  <style>
+    /* font-display:optional = never block rendering waiting for fonts.
+       On first load the fallback stack renders immediately.
+       On subsequent loads (fonts cached) the custom fonts appear.
+       This eliminates ALL font-related load delay on local/live-server. */
+    @font-face { font-family:'Cormorant Garamond'; font-display:optional; src:local('Cormorant Garamond'); }
+    @font-face { font-family:'DM Sans'; font-display:optional; src:local('DM Sans'); }
+  </style>
+  <!-- Fallback: if Bunny is also slow on your network, the CSS below ensures
+       the page renders immediately in a beautiful system serif/sans stack.
+       Remove the <link> above entirely to go 100% offline/instant. -->
+
+  <style>
+    /* ── DESIGN TOKENS ─────────────────────────────────────── */
+    :root {
+      --ink:       #0d1117;
+      --ink-mid:   #1e2530;
+      --ink-soft:  #4a5568;
+      --line:      #e2e8f0;
+      --line-faint:#f1f5f9;
+      --cream:     #faf9f7;
+      --paper:     #ffffff;
+      --gold:      #b8964a;
+      --gold-lt:   #d4af6a;
+      --gold-pale: #fdf6e8;
+      --red-alert: #c0392b;
+      --serif:     'Cormorant Garamond', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+      --sans:      'DM Sans', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp   { from{ opacity:0; transform:translateY(22px) } to{ opacity:1; transform:translateY(0) } }
+    @keyframes fadeIn   { from{ opacity:0 }                            to{ opacity:1 }                           }
+    @keyframes shimmer  { from{ background-position:-200% center }     to{ background-position: 200% center }   }
+    @keyframes scaleIn  { from{ transform:scaleX(0) }                  to{ transform:scaleX(1) }                }
+
+    .reveal {
+      opacity:0;
+      transform:translateY(22px);
+      transition: opacity .65s cubic-bezier(.22,.68,0,1.2), transform .65s cubic-bezier(.22,.68,0,1.2);
+    }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* ── TOP NAV ─────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,17,23,0.94);
+      backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 60px;
+    }
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: #fff;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+    .nav-brand span { color: var(--gold-lt); font-style: italic; }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold-lt); }
+    .nav-cta {
+      background: var(--gold);
+      color: #fff !important;
+      padding: 7px 18px;
+      border-radius: 6px;
+      opacity: 1 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-lt) !important; color: var(--ink) !important; }
+
+    .lang-switch {
+      display:flex; gap:10px; align-items:center;
+      border-left:1px solid rgba(255,255,255,0.1);
+      padding-left:14px; margin-left:4px;
+    }
+    .lang-link {
+      color:rgba(255,255,255,0.5);
+      text-decoration:none;
+      font-size:0.75rem;
+      font-weight:600;
+      letter-spacing:0.04em;
+      transition:color .15s;
+    }
+    .lang-link:hover { color:var(--gold-lt); }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links li:not(:last-child):not(:nth-last-child(2)) { display:none; }
+      .lang-switch { display:none; }
+    }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      background: var(--ink);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 60px;
+    }
+
+    /* subtle noise texture overlay */
+    .hero::before {
+      content:'';
+      position:absolute; inset:0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events:none; z-index:0;
+    }
+
+    /* gold grid lines */
+    .hero::after {
+      content:'';
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(184,150,74,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,150,74,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events:none; z-index:0;
+    }
+
+    .hero-left {
+      position:relative; z-index:1;
+      padding: 80px 60px 80px 80px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content:'';
+      display:inline-block;
+      width:32px; height:1px;
+      background: var(--gold);
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 5vw, 5.5rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-title {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      margin-top: 18px;
+      line-height: 1.6;
+      max-width: 420px;
+    }
+
+    .hero-degrees {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .degree-pill {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(184,150,74,0.35);
+      color: var(--gold-lt);
+      background: rgba(184,150,74,0.07);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-actions {
+      margin-top: 40px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 14px 26px;
+      border-radius: 8px;
+      transition: background .18s, transform .15s;
+      letter-spacing: 0.02em;
+    }
+    .btn-primary:hover { background: var(--gold-lt); color: var(--ink); transform:translateY(-2px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 14px 26px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: border-color .18s, color .18s, transform .15s;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold-lt); transform:translateY(-2px); }
+
+    /* Hero right — photo + decorative frame */
+    .hero-right {
+      position:relative; z-index:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 80px 80px 80px 20px;
+    }
+    .photo-frame {
+      position: relative;
+      width: 340px;
+      height: 420px;
+    }
+    .photo-frame::before {
+      content:'';
+      position:absolute;
+      top:-14px; right:-14px;
+      width:100%; height:100%;
+      border: 1.5px solid rgba(184,150,74,0.4);
+      border-radius: 6px;
+      z-index: 0;
+    }
+    .photo-frame img {
+      position:relative; z-index:1;
+      width:100%; height:100%;
+      object-fit:cover;
+      object-position:50% 8%;
+      border-radius:6px;
+      display:block;
+      background:#1e2530;
+    }
+    /* subtle vignette at bottom of photo */
+    .photo-frame::after {
+      content:'';
+      position:absolute; bottom:0; left:0; right:0; z-index:2;
+      height:40%;
+      background: linear-gradient(transparent, rgba(13,17,23,0.3));
+      border-radius: 0 0 6px 6px;
+      pointer-events:none;
+    }
+
+    /* ── STATS STRIP ─────────────────────────────────────────── */
+    .stats-strip {
+      background: var(--ink-mid);
+      padding: 36px 0;
+    }
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 0;
+      padding: 0 32px;
+    }
+    .stat-item {
+      text-align:center;
+      padding: 8px 20px;
+      position:relative;
+    }
+    .stat-item + .stat-item::before {
+      content:'';
+      position:absolute; left:0; top:20%; bottom:20%;
+      width:1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      font-weight: 600;
+      color: var(--gold-lt);
+      display: block;
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-top: 6px;
+      display:block;
+    }
+
+    /* ── SECTION WRAPPER ─────────────────────────────────────── */
+    section {
+      padding: 80px 32px;
+    }
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .section-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .section-tag::before {
+      content:'';
+      width:24px; height:1px;
+      background: var(--gold);
+      display:inline-block;
+    }
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .section-heading em { color: var(--gold); font-style: italic; }
+    .section-divider {
+      width:48px; height:2px;
+      background: var(--gold);
+      margin: 20px 0 36px;
+      transform-origin: left;
+      animation: scaleIn .8s ease-out both;
+    }
+
+    /* ── ABOUT ───────────────────────────────────────────────── */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 72px;
+      align-items:start;
+    }
+    .about-body p {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .about-body p strong { color: var(--ink); font-weight:600; }
+
+    .qual-list {
+      list-style:none;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .qual-list li {
+      display:flex; align-items:flex-start; gap:14px;
+      padding: 14px 18px;
+      background: var(--paper);
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .qual-icon {
+      font-size:1.3rem; flex:0 0 auto;
+      line-height:1;
+    }
+    .qual-info .qual-deg {
+      font-weight:600;
+      font-size:0.95rem;
+      color:var(--ink);
+      display:block;
+    }
+    .qual-info .qual-desc {
+      font-size:0.82rem;
+      color:var(--ink-soft);
+      display:block;
+      margin-top:2px;
+    }
+
+    /* ── EXPERIENCE ──────────────────────────────────────────── */
+    #experience { background: var(--paper); }
+    .exp-timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+    .exp-timeline::before {
+      content:'';
+      position: absolute;
+      left:6px; top:8px; bottom:8px;
+      width:1px;
+      background: linear-gradient(var(--gold), transparent);
+    }
+    .exp-item {
+      position:relative;
+      margin-bottom:36px;
+    }
+    .exp-item::before {
+      content:'';
+      position:absolute;
+      left:-28px; top:6px;
+      width:10px; height:10px;
+      border-radius:50%;
+      background:var(--gold);
+      border:2px solid var(--paper);
+      box-shadow:0 0 0 3px rgba(184,150,74,0.25);
+    }
+    .exp-period {
+      font-size:0.72rem;
+      font-weight:600;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:4px;
+    }
+    .exp-role {
+      font-family: var(--serif);
+      font-size:1.35rem;
+      font-weight:600;
+      color:var(--ink);
+      line-height:1.2;
+    }
+    .exp-org {
+      font-size:0.88rem;
+      color:var(--ink-soft);
+      margin-top:4px;
+    }
+    .exp-detail {
+      margin-top:10px;
+      font-size:0.9rem;
+      color:var(--ink-soft);
+      line-height:1.7;
+      padding-left:0;
+      list-style:none;
+    }
+    .exp-detail li { padding:2px 0; }
+    .exp-detail li::before { content:'— '; color:var(--gold); }
+
+    /* ── SPECIALTIES ─────────────────────────────────────────── */
+    #specialties { background: var(--cream); }
+    .spec-grid {
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:20px;
+    }
+    .spec-card {
+      background: var(--paper);
+      border-radius:12px;
+      border:1px solid var(--line);
+      padding: 28px 24px;
+      transition: box-shadow .2s, transform .2s, border-color .2s;
+    }
+    .spec-card:hover {
+      box-shadow: 0 12px 32px rgba(184,150,74,0.12);
+      transform:translateY(-3px);
+      border-color: rgba(184,150,74,0.35);
+    }
+    .spec-icon {
+      font-size:1.8rem;
+      margin-bottom:14px;
+      display:block;
+    }
+    .spec-name {
+      font-family:var(--serif);
+      font-size:1.2rem;
+      font-weight:600;
+      color:var(--ink);
+      margin-bottom:8px;
+    }
+    .spec-desc {
+      font-size:0.85rem;
+      color:var(--ink-soft);
+      line-height:1.65;
+    }
+
+    /* ── TELEMEDICINE ────────────────────────────────────────── */
+    #telemedicine { background: var(--ink); position:relative; overflow:hidden; }
+    #telemedicine::after {
+      content:'';
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(184,150,74,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,150,74,0.04) 1px, transparent 1px);
+      background-size:60px 60px;
+      pointer-events:none;
+    }
+    #telemedicine .section-heading { color:#fff; }
+    #telemedicine .section-tag { color:var(--gold-lt); }
+    #telemedicine .section-tag::before { background:var(--gold-lt); }
+
+    .tele-layout {
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:60px;
+      position:relative; z-index:1;
+    }
+
+    .tele-intro {
+      font-size:1rem;
+      color:rgba(255,255,255,0.6);
+      margin-bottom:28px;
+      line-height:1.75;
+    }
+
+    .tele-features {
+      list-style:none;
+      display:flex; flex-direction:column; gap:14px;
+      margin-bottom:36px;
+    }
+    .tele-features li {
+      display:flex; gap:14px; align-items:flex-start;
+      padding:14px 18px;
+      background:rgba(255,255,255,0.04);
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.06);
+      color:rgba(255,255,255,0.75);
+      font-size:0.9rem;
+    }
+    .tele-features li .fi { flex:0 0 auto; font-size:1.2rem; }
+
+    .emergency-bar {
+      background:rgba(192,57,43,0.15);
+      border:1px solid rgba(192,57,43,0.35);
+      color:#f87171;
+      border-radius:8px;
+      padding:12px 16px;
+      font-size:0.85rem;
+      font-weight:600;
+      margin-bottom:28px;
+    }
+
+    /* booking card */
+    .booking-card {
+      background:var(--paper);
+      border-radius:16px;
+      padding:28px;
+      box-shadow:0 24px 60px rgba(0,0,0,0.4);
+    }
+    .booking-card h3 {
+      font-family:var(--serif);
+      font-size:1.5rem;
+      font-weight:600;
+      color:var(--ink);
+      margin-bottom:8px;
+    }
+    .booking-card .price-row {
+      display:flex; align-items:baseline; gap:8px;
+      margin-bottom:20px;
+    }
+    .price-main {
+      font-family:var(--serif);
+      font-size:2.4rem;
+      font-weight:600;
+      color:var(--gold);
+    }
+    .price-note {
+      font-size:0.85rem;
+      color:var(--ink-soft);
+    }
+
+    .acc-list { display:flex; flex-direction:column; gap:8px; }
+    .acc-item {
+      border-radius:8px;
+      border:1px solid var(--line);
+      overflow:hidden;
+    }
+    .acc-trigger {
+      width:100%; text-align:left;
+      padding:12px 16px;
+      background:var(--line-faint);
+      border:0; cursor:pointer;
+      font-family:var(--sans);
+      font-size:0.88rem;
+      font-weight:600;
+      color:var(--ink);
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .acc-trigger .arrow { transition:transform .25s; font-size:0.8rem; color:var(--ink-soft); }
+    .acc-trigger[aria-expanded="true"] .arrow { transform:rotate(180deg); }
+    .acc-body {
+      display:none;
+      padding:12px 16px;
+      background:var(--paper);
+      font-size:0.84rem;
+      color:var(--ink-soft);
+      line-height:1.7;
+    }
+    .acc-body ul { padding-left:16px; }
+    .acc-body li { margin-bottom:4px; }
+
+    .book-btn {
+      display:block;
+      width:100%;
+      margin-top:20px;
+      padding:15px;
+      background:var(--gold);
+      color:#fff;
+      text-align:center;
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.95rem;
+      border-radius:10px;
+      border:0; cursor:pointer;
+      transition:background .18s, transform .14s;
+      letter-spacing:0.03em;
+    }
+    .book-btn:hover { background:var(--gold-lt); color:var(--ink); transform:translateY(-2px); }
+
+    /* ── PAYMENT ─────────────────────────────────────────────── */
+    #payment { background:var(--paper); }
+    .pay-layout {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+    .pay-rules-card {
+      background:var(--ink);
+      border-radius:14px;
+      padding:32px;
+      color:#fff;
+    }
+    .pay-rules-card h3 {
+      font-family:var(--serif);
+      font-size:1.6rem;
+      color:var(--gold-lt);
+      margin-bottom:20px;
+    }
+    .rules-section { margin-bottom:20px; }
+    .rules-section h4 {
+      font-size:0.75rem;
+      font-weight:700;
+      letter-spacing:0.15em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.4);
+      margin-bottom:10px;
+    }
+    .rules-section ul {
+      list-style:none;
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .rules-section li {
+      font-size:0.88rem;
+      color:rgba(255,255,255,0.7);
+      line-height:1.6;
+      padding-left:14px;
+      position:relative;
+    }
+    .rules-section li::before { content:'·'; position:absolute; left:0; color:var(--gold); font-size:1.1rem; }
+    .rules-section li strong { color:#fff; }
+
+    .pay-action-card {
+      background:var(--cream);
+      border-radius:14px;
+      padding:32px;
+      border:1px solid var(--line);
+      display:flex; flex-direction:column; gap:16px;
+    }
+    .payee-alert {
+      background:var(--gold-pale);
+      border:1px solid rgba(184,150,74,0.3);
+      border-radius:8px;
+      padding:12px 16px;
+      font-size:0.88rem;
+      color:var(--ink);
+      font-weight:600;
+    }
+    .payee-alert span { color:var(--gold); }
+
+    .amount-select h4 {
+      font-size:0.75rem; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--ink-soft); margin-bottom:10px;
+    }
+    .preset-row { display:flex; gap:10px; flex-wrap:wrap; }
+    .amt-preset {
+      padding:10px 20px;
+      border-radius:8px;
+      border:1.5px solid var(--line);
+      background:var(--paper);
+      font-family:var(--serif);
+      font-size:1.1rem;
+      font-weight:600;
+      color:var(--ink);
+      cursor:pointer;
+      transition:border-color .15s, background .15s, color .15s;
+    }
+    .amt-preset:hover,
+    .amt-preset.active {
+      border-color:var(--gold);
+      background:var(--gold-pale);
+      color:var(--gold);
+    }
+
+    .upi-display {
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:16px 18px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+    }
+    .upi-id { font-family:var(--sans); font-weight:700; font-size:1rem; color:var(--ink); }
+    .copy-btn {
+      background:var(--ink);
+      color:#fff;
+      border:0; cursor:pointer;
+      border-radius:6px;
+      padding:7px 14px;
+      font-size:0.8rem;
+      font-weight:600;
+      transition:background .15s;
+    }
+    .copy-btn:hover { background:var(--gold); }
+
+    .qr-section {
+      text-align:center;
+    }
+    .qr-wrap {
+      display:inline-block;
+      background:var(--paper);
+      border-radius:12px;
+      padding:16px;
+      border:1px solid var(--line);
+    }
+    .qr-wrap img { width:160px; height:160px; display:block; border-radius:6px; }
+    .qr-label { font-size:0.75rem; color:var(--ink-soft); margin-top:8px; font-weight:500; }
+
+    .after-pay-btn {
+      display:flex;
+      align-items:center; justify-content:space-between;
+      background:var(--ink);
+      color:#fff;
+      text-decoration:none;
+      border-radius:10px;
+      padding:14px 20px;
+      font-size:0.9rem;
+      font-weight:600;
+      cursor:pointer; border:0;
+      transition:background .18s;
+    }
+    .after-pay-btn:hover { background:var(--ink-mid); }
+    .after-pay-btn .badge {
+      background:var(--gold);
+      color:#fff;
+      font-size:0.7rem;
+      font-weight:700;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      padding:3px 10px;
+      border-radius:100px;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      padding:40px 32px;
+      text-align:center;
+    }
+    .footer-name {
+      font-family:var(--serif);
+      font-size:1.4rem;
+      color:var(--gold-lt);
+      margin-bottom:8px;
+    }
+    .footer-copy {
+      font-size:0.8rem;
+      color:rgba(255,255,255,0.35);
+    }
+    .footer-links {
+      display:flex; gap:20px; justify-content:center;
+      list-style:none;
+      margin:16px 0;
+    }
+    .footer-links a {
+      color:rgba(255,255,255,0.45);
+      text-decoration:none;
+      font-size:0.82rem;
+      transition:color .15s;
+    }
+    .footer-links a:hover { color:var(--gold-lt); }
+
+    /* ── TOAST ───────────────────────────────────────────────── */
+    #toast {
+      position:fixed; bottom:28px; left:50%; transform:translateX(-50%);
+      background:rgba(13,17,23,0.92); color:#fff;
+      padding:10px 20px; border-radius:10px;
+      font-size:0.88rem; font-weight:600;
+      z-index:9999; display:none;
+      border:1px solid rgba(184,150,74,0.3);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width:900px) {
+      /* hero: stack vertically, photo first on mobile */
+      .hero {
+        grid-template-columns:1fr;
+        grid-template-rows: auto auto;
+        padding: 80px 24px 40px;
+        min-height: unset;
+      }
+      .hero-left { padding: 32px 0 0; order:2; }
+      .hero-right { padding: 24px 0 0; order:1; justify-content:flex-start; }
+      .photo-frame { width:180px; height:220px; }
+      /* hero decorative offset border — tighten on mobile */
+      .photo-frame::before { top:-8px; right:-8px; }
+
+      /* all 2-col grids go single col */
+      .about-grid, .tele-layout, .pay-layout { grid-template-columns:1fr; gap:28px; }
+
+      /* specialties: 2-col on tablet */
+      .spec-grid { grid-template-columns: repeat(2,1fr); }
+
+      /* stats: 2x2 grid */
+      .stats-inner { grid-template-columns: repeat(2,1fr); gap:0; }
+      .stat-item + .stat-item::before { display:none; }
+      .stat-item { padding:16px 12px; }
+
+      /* booking card: full width on mobile */
+      .tele-layout > div:last-child { order:1; }
+      .tele-layout > div:first-child { order:2; }
+
+      /* nav: hide middle links, keep brand + cta */
+      .nav-links li:not(:last-child) { display:none; }
+    }
+
+    @media (max-width:640px) {
+      /* nav */
+      nav { padding: 0 16px; height:54px; }
+      .nav-brand { font-size:1rem; }
+
+      /* hero */
+      .hero { padding: 70px 20px 32px; }
+      .hero-name { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+      .hero-title { font-size:0.92rem; }
+      .hero-actions { flex-direction:column; gap:10px; }
+      .btn-primary, .btn-ghost { width:100%; justify-content:center; padding:13px 20px; }
+      .photo-frame { width:160px; height:200px; }
+
+      /* stats */
+      .stats-strip { padding:24px 0; }
+      .stat-num { font-size:1.7rem; }
+      .stat-label { font-size:0.65rem; }
+
+      /* sections */
+      section { padding:48px 18px; }
+      .section-heading { font-size:1.8rem; }
+
+      /* about grid: qualifications stack below bio */
+      .qual-list li { padding:12px 14px; }
+
+      /* spec grid: single col */
+      .spec-grid { grid-template-columns:1fr; gap:14px; }
+      .spec-card { padding:20px 18px; }
+
+      /* tele booking card: reduce padding */
+      .booking-card { padding:20px; }
+      .price-main { font-size:2rem; }
+
+      /* payment */
+      .pay-rules-card, .pay-action-card { padding:20px; border-radius:10px; }
+      .preset-row { flex-direction:column; gap:8px; }
+      .amt-preset { width:100%; text-align:left; padding:12px 16px; }
+
+      /* UPI row: stack on very narrow */
+      .upi-display { flex-direction:column; align-items:flex-start; gap:8px; }
+      .copy-btn { width:100%; text-align:center; padding:10px; }
+
+      /* after-pay button */
+      .after-pay-btn { flex-direction:column; align-items:flex-start; gap:8px; }
+      .after-pay-btn .badge { align-self:flex-end; }
+
+      /* footer links wrap */
+      .footer-links { flex-wrap:wrap; gap:12px; justify-content:center; }
+
+      /* experience timeline — tighten */
+      .exp-timeline { padding-left:24px; }
+      .exp-item::before { left:-21px; }
+      .exp-role { font-size:1.15rem; }
+    }
+
+    /* Extra-narrow (375px iPhone SE) */
+    @media (max-width:400px) {
+      .hero-name { font-size:2.2rem; }
+      .degree-pill { font-size:0.7rem; padding:4px 10px; }
+      .stat-num { font-size:1.5rem; }
+    }
+  </style>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Physician",
+    "name":"Dr. Mit Panchani",
+    "medicalSpecialty":["Internal Medicine","Cardiology","Diabetes","Thyroid","Rheumatology"],
+    "description":"MBBS, MD General Medicine, PGCIH, Fellow in 2D Echocardiography",
+    "url":"https://drmjp93.in/",
+    "address":{"@type":"PostalAddress","addressCountry":"IN"},
+    "availableService":{"@type":"MedicalTherapy","name":"Telemedicine Consultation"},
+    "contactPoint":{"@type":"ContactPoint","email":"reach@drmjp93.in","contactType":"customer support"}
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- ════════════════════════════ NAV ════════════════════════════ -->
+<nav role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand">Dr. <span>Mit Panchani</span></a>
+  <div class="lang-switch" aria-label="Language selector">
+    <a href="/" class="lang-link" aria-label="English">EN</a>
+    <a href="/hi/" class="lang-link" aria-label="Hindi">हि</a>
+    <a href="/gu/" class="lang-link" aria-label="Gujarati">ગુ</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#specialties">Specialties</a></li>
+    <li><a href="#telemedicine" class="nav-cta">Book Consultation</a></li>
+  </ul>
+</nav>
+
+<!-- ════════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero-left" style="animation:fadeUp .9s ease-out both">
+    <div class="hero-eyebrow">Internal Medicine &amp; Echocardiography</div>
+    <h1 class="hero-name">Dr. Mit<br><em>Panchani</em></h1>
+    <p class="hero-title">
+      MD General Medicine · 2D Echocardiographer<br>
+      Dedicated to compassionate, evidence-based care.
+    </p>
+    <div class="hero-degrees">
+      <span class="degree-pill">MBBS</span>
+      <span class="degree-pill">MD General Medicine</span>
+      <span class="degree-pill">PGCIH</span>
+      <span class="degree-pill">Fellow · 2D Echo</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#telemedicine" class="btn-primary">📞 Book Telemedicine</a>
+      <a href="#about" class="btn-ghost">Learn More →</a>
+    </div>
+  </div>
+  <div class="hero-right" style="animation:fadeIn 1.1s ease-out both">
+    <div class="photo-frame">
+      <img src="myphoto.jpg" alt="Dr. Mit Panchani — MD Medicine, 2D Echocardiographer" onerror="this.style.background='#1e2530';this.removeAttribute('onerror')" />
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ STATS ══════════════════════════ -->
+<div class="stats-strip" aria-label="Clinical statistics">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <span class="stat-num" id="s-cases">17,530</span>
+      <span class="stat-label">Cases Attended</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num" id="s-echo">1,711</span>
+      <span class="stat-label">Echo Studies</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num" id="s-fit">1,676</span>
+      <span class="stat-label">Surgical Fitness Given</span>
+    </div>
+    <div class="stat-item reveal">
+      <span class="stat-num" id="s-adm">555</span>
+      <span class="stat-label">Admissions Managed</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════ ABOUT ══════════════════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-tag">About the Physician</div>
+    <h2 class="section-heading reveal">A physician who <em>listens</em>,<br>then acts.</h2>
+    <div class="section-divider reveal"></div>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>Dr. Mit Panchani is a qualified <strong>Internal Medicine physician</strong> with an MBBS foundation and a postgraduate MD in General Medicine. His additional credential in <strong>Industrial Health (PGCIH)</strong> and fellowship in <strong>2D Echocardiography</strong> give him a uniquely broad clinical lens — from cardiac imaging to occupational and chronic-disease management.</p>
+        <p>He has attended over <strong><span id="ab-cases">17,530</span> cases</strong>, performed more than <strong><span id="ab-echo">1,711</span> echocardiographic studies</strong>, and provided pre-operative surgical fitness assessments for <strong><span id="ab-fit">1,676</span> patients</strong>. His practice covers diabetes, thyroid disorders, hypertension, cholesterol, cardiac conditions, rheumatoid arthritis, vertigo, <strong>respiratory illnesses, renal infections, and headache disorders</strong> — with particular attention to complex chronic-disease patients including those in pregnancy.</p>
+        <p>He is skilled in <strong>ECG interpretation and 2D Echocardiography</strong>, and provides <strong>preventive health counselling</strong> alongside long-term chronic disease follow-up. He believes in clear communication, honest prognosis, and cost-aware prescribing — ensuring patients understand not just the diagnosis but the path forward.</p>
+      </div>
+      <div class="reveal">
+        <ul class="qual-list">
+          <li>
+            <span class="qual-icon">🎓</span>
+            <span class="qual-info">
+              <span class="qual-deg">MBBS</span>
+              <span class="qual-desc">Bachelor of Medicine &amp; Surgery · Ahmedabad</span>
+            </span>
+          </li>
+          <li>
+            <span class="qual-icon">🏥</span>
+            <span class="qual-info">
+              <span class="qual-deg">MD — General Medicine</span>
+              <span class="qual-desc">Postgraduate · Internal Medicine · Surat</span>
+            </span>
+          </li>
+          <li>
+            <span class="qual-icon">🏭</span>
+            <span class="qual-info">
+              <span class="qual-deg">PGCIH — MSU Baroda</span>
+              <span class="qual-desc">Postgraduate Certificate in Industrial Health · Baroda</span>
+            </span>
+          </li>
+          <li>
+            <span class="qual-icon">🫀</span>
+            <span class="qual-info">
+              <span class="qual-deg">Fellow — 2D Echocardiography</span>
+              <span class="qual-desc">Cardiac Imaging · CIMS Hospital, Ahmedabad</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ EXPERIENCE ═════════════════════ -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-tag">Career</div>
+    <h2 class="section-heading reveal">Work <em>Experience</em></h2>
+    <div class="section-divider reveal"></div>
+    <div class="exp-timeline reveal">
+      <div class="exp-item">
+        <div class="exp-period">Current Position</div>
+        <div class="exp-role">Telemedicine & OPD Physician</div>
+        <div class="exp-org">Independent Practice · drmjp93.in</div>
+        <ul class="exp-detail">
+          <li>Chronic disease management: Diabetes, Thyroid, Hypertension, Dyslipidaemia</li>
+          <li>Cardiac condition monitoring and medication review</li>
+          <li>Telemedicine consultations via phone &amp; video</li>
+          <li>Pre-operative surgical fitness certification</li>
+          <li>2D Echocardiographic studies interpretation</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">Postgraduate Training</div>
+        <div class="exp-role">Resident — General Medicine (MD)</div>
+        <div class="exp-org">Medical College &amp; Hospital</div>
+        <ul class="exp-detail">
+          <li>Intensive inpatient internal medicine across 555+ admitted cases</li>
+          <li>Emergency medicine: chest pain, breathlessness, seizures, altered sensorium</li>
+          <li>Cardiac imaging training: 1,711 echocardiographic studies performed</li>
+          <li>Multidisciplinary case management in ICU &amp; general wards</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">Fellowship</div>
+        <div class="exp-role">Fellow — 2D Echocardiography</div>
+        <div class="exp-org">Cardiology Department</div>
+        <ul class="exp-detail">
+          <li>Transthoracic echocardiography: LV function, valvular disease, pericardial conditions</li>
+          <li>Integration of echo findings with clinical history for diagnosis &amp; management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ SPECIALTIES ════════════════════ -->
+<section id="specialties">
+  <div class="section-inner">
+    <div class="section-tag">Areas of Practice</div>
+    <h2 class="section-heading reveal">Clinical <em>Specialties</em></h2>
+    <div class="section-divider reveal"></div>
+    <div class="spec-grid">
+      <div class="spec-card reveal">
+        <span class="spec-icon">🫀</span>
+        <div class="spec-name">Cardiac Medicine</div>
+        <p class="spec-desc">2D Echocardiography, cardiac disease monitoring, pre-surgical fitness. Management of on-going cardiac conditions including valvular disease and heart failure.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🩸</span>
+        <div class="spec-name">Diabetes & Metabolic</div>
+        <p class="spec-desc">Type 1 &amp; Type 2 diabetes management, dyslipidaemia (cholesterol), medication optimisation, HbA1c monitoring and lifestyle counselling.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🦋</span>
+        <div class="spec-name">Thyroid Disorders</div>
+        <p class="spec-desc">Hypothyroidism and hyperthyroidism management, thyroid function monitoring, and long-term medication titration.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">💉</span>
+        <div class="spec-name">Hypertension</div>
+        <p class="spec-desc">Blood pressure management, anti-hypertensive optimisation, and cardiovascular risk stratification.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🦴</span>
+        <div class="spec-name">Rheumatoid Arthritis</div>
+        <p class="spec-desc">Long-term RA management, DMARD therapy follow-up, joint monitoring, and coordination with rheumatology for complex cases.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🌀</span>
+        <div class="spec-name">Vertigo & Neurology</div>
+        <p class="spec-desc">Evaluation and management of vertigo, BPPV, vestibular disorders, and common neurological follow-ups in the outpatient setting.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🤰</span>
+        <div class="spec-name">Obstetric Medicine</div>
+        <p class="spec-desc">Medical management during pregnancy for Gestational Diabetes, Thyroid disorders (hypo/hyperthyroidism), and Hypertension — non-emergency follow-up, medication review, and monitoring for mother and foetal wellbeing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ TELEMEDICINE ═══════════════════ -->
+<section id="telemedicine">
+  <div class="section-inner">
+    <div class="tele-layout">
+      <!-- LEFT -->
+      <div>
+        <div class="section-tag">Remote Consultation</div>
+        <h2 class="section-heading reveal">Consult from the<br><em>comfort of home.</em></h2>
+        <div class="section-divider reveal"></div>
+
+        <div class="emergency-bar reveal">
+          ⚠️ Emergency? Chest pain, severe breathlessness, weakness, seizures or altered sensorium — go to the nearest hospital immediately. This is not an emergency service.
+        </div>
+
+        <p class="tele-intro reveal">
+          A structured phone consultation with Dr. Panchani — designed for chronic disease follow-ups, medication reviews, and report interpretations without the inconvenience of travel.
+        </p>
+
+        <ul class="tele-features reveal">
+          <li><span class="fi">💊</span>Chronic disease follow-up: Diabetes, Thyroid, BP, Cholesterol, Cardiac, RA, Vertigo</li>
+          <li><span class="fi">🤰</span>Obstetric medicine: Gestational DM, Thyroid &amp; BP in pregnancy (non-emergency)</li>
+          <li><span class="fi">📋</span>Blood report &amp; test review</li>
+          <li><span class="fi">💬</span>Medication review &amp; dose clarification</li>
+        </ul>
+
+        <!-- Follow-up accordion -->
+        <div class="acc-list reveal">
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              How it works <span class="arrow">▾</span>
+            </button>
+            <div class="acc-body">
+              <ol style="padding-left:18px">
+                <li>Click <strong>Pay Now</strong> and complete payment.</li>
+                <li>Fill the confirmation form after payment with your contact details.</li>
+                <li>A phone call time slot will be assigned — then the consultation happens.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              Follow-up &amp; WhatsApp Policy <span class="arrow">▾</span>
+            </button>
+            <div class="acc-body">
+              <ul>
+                <li>Follow-up for the <strong>same problem within 72 hours</strong> → Free (call or message).</li>
+                <li>After 72 hours → ₹300 per call.</li>
+                <li>New symptoms or a new issue = new consultation, even within 72 hours.</li>
+                <li>WhatsApp is only for small prescription clarifications or sharing reports — not for new symptoms or treatment decisions.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              Refund &amp; Rescheduling <span class="arrow">▾</span>
+            </button>
+            <div class="acc-body">
+              <ul>
+                <li>Full refund if requested before slot assignment.</li>
+                <li>No refund for no-show after slot confirmation.</li>
+                <li>One free reschedule allowed.</li>
+                <li>Technical issue on our side → rescheduled at no cost.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              Before the consultation <span class="arrow">▾</span>
+            </button>
+            <div class="acc-body">
+              <ul>
+                <li>Your age, current medications, and allergies.</li>
+                <li>Recent lab reports or imaging.</li>
+                <li>Vitals if available: BP, Temperature, SpO₂.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Booking Card -->
+      <div class="reveal">
+        <div class="booking-card">
+          <h3>Book Consultation</h3>
+          <div class="price-row">
+            <span class="price-main">₹400</span>
+            <span class="price-note">First consult · ~15 mins</span>
+          </div>
+          <p style="font-size:0.84rem;color:#6b7280;margin-bottom:18px;">Appointment confirmed only after payment. Consultation via phone (or video if required).</p>
+
+          <a href="pay.html" class="book-btn">Proceed to Payment →</a>
+
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eee;">
+            <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:8px;">Terms apply</div>
+            <p style="font-size:0.8rem;color:#9ca3af;line-height:1.6;">Payment + form submission = consent to teleconsultation. Medical advice is based on information provided verbally/in writing. Cannot replace physical examination when clinically required. All information remains confidential.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ PAYMENT ════════════════════════ -->
+<section id="payment">
+  <div class="section-inner">
+    <div class="section-tag">Secure UPI Payment</div>
+    <h2 class="section-heading reveal">Pay <em>securely</em> via UPI</h2>
+    <div class="section-divider reveal"></div>
+
+    <div class="pay-layout">
+      <!-- Rules card -->
+      <div class="pay-rules-card reveal">
+        <h3>Important Rules</h3>
+        <div class="rules-section">
+          <h4>Before Consultation</h4>
+          <ul>
+            <li>Appointment is given only after payment confirmation.</li>
+            <li><strong>Fill the confirmation form after payment</strong> — without it, we cannot contact you.</li>
+            <li>Emergency cases must visit the nearest hospital immediately.</li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <h4>Follow-up</h4>
+          <ul>
+            <li>Same problem within 72 hrs → <strong>Free</strong></li>
+            <li>After 72 hrs → <strong>₹300</strong> per call</li>
+            <li>New issue = new paid consultation</li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <h4>Support</h4>
+          <ul>
+            <li>Payment issues or queries: <strong>reach@drmjp93.in</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Action card -->
+      <div class="pay-action-card reveal">
+        <div class="payee-alert">
+          ✅ Confirm payee name: <span>Mit J Panchani</span> before paying
+        </div>
+
+        <div class="amount-select">
+          <h4>Select Amount</h4>
+          <div class="preset-row">
+            <button class="amt-preset active" data-val="400">₹400 <span style="font-size:0.65rem;font-weight:400;display:block;color:inherit;opacity:0.7">First consult</span></button>
+            <button class="amt-preset" data-val="300">₹300 <span style="font-size:0.65rem;font-weight:400;display:block;color:inherit;opacity:0.7">Follow-up</span></button>
+          </div>
+        </div>
+
+        <div class="upi-display">
+          <span class="upi-id" id="upiId">drmjp93@upi</span>
+          <button class="copy-btn" id="copyUpi">Copy UPI ID</button>
+        </div>
+
+        <div class="qr-section">
+          <div class="qr-wrap">
+            <img id="qrImg" src="qr.jpg" alt="UPI QR Code for Dr. Mit Panchani"/>
+            <div class="qr-label">Scan to pay · <span id="qrAmt">₹400</span></div>
+          </div>
+        </div>
+
+        <button class="after-pay-btn" id="openFormBtn">
+          <span>After payment → Submit form <span style="font-size:0.78rem;display:block;opacity:0.6;font-weight:400;margin-top:2px">Compulsory — we'll contact you on this number</span></span>
+          <span class="badge">Required</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ FOOTER ═════════════════════════ -->
+
+<!-- ════════════════════════════ TOOLS ══════════════════════════ -->
+<section id="tools" style="background:var(--cream);">
+  <div class="section-inner">
+    <div class="section-tag">Clinical Tools</div>
+    <h2 class="section-heading reveal">Free <em>Tools</em> for Patients</h2>
+    <div class="section-divider reveal"></div>
+    <p style="color:var(--ink-soft);margin-bottom:28px;font-size:0.95rem;" class="reveal">
+      Developed by Dr. Panchani to help patients understand their own reports.
+    </p>
+
+    <div class="reveal" style="border-radius:14px;border:1px solid var(--line);background:var(--paper);overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.04);">
+      <!-- Header / trigger -->
+      <details id="ldl-embed-card">
+        <summary style="list-style:none;cursor:pointer;display:flex;align-items:stretch;outline:none;-webkit-tap-highlight-color:transparent;">
+          <div style="display:flex;gap:16px;align-items:center;padding:18px 20px;flex:1;min-width:0;">
+            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.88rem;flex:0 0 48px;box-shadow:0 6px 16px rgba(124,58,237,0.25);">LDL</div>
+            <div style="overflow:hidden;min-width:0;">
+              <div style="font-weight:700;color:var(--ink);font-size:0.98rem;margin-bottom:2px;">LDL Cholesterol Calculator</div>
+              <div style="font-size:0.82rem;color:var(--ink-soft);">Enter your LDL value to see if medication is needed · Developed by Dr. Panchani</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;padding:0 22px;background:linear-gradient(135deg,#ff6b6b,#ff3d71);color:#fff;font-weight:700;font-size:0.85rem;border-radius:0 14px 14px 0;white-space:nowrap;">
+            Tap to open ▾
+          </div>
+        </summary>
+        <div style="padding:16px;border-top:1px solid var(--line);">
+          <div id="ldl-iframe-wrap" style="width:100%;min-height:520px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--line-faint);">
+            <div style="padding:28px;text-align:center;color:var(--ink-soft);font-size:0.9rem;">Loading calculator…</div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+<style>
+#ldl-embed-card summary::-webkit-details-marker { display:none; }
+#ldl-embed-card summary::marker { content:none; }
+#ldl-embed-card summary:hover { background:var(--line-faint); transition:background .15s; }
+</style>
+<script>
+(function(){
+  const details = document.getElementById('ldl-embed-card');
+  const wrap    = document.getElementById('ldl-iframe-wrap');
+  if(!details || !wrap) return;
+  let loaded = false;
+  details.addEventListener('toggle', ()=>{
+    if(!loaded && details.open){
+      wrap.innerHTML = '';
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://tools.drmjp93.in/ldl/';
+      iframe.title = 'LDL Calculator';
+      iframe.style.cssText = 'width:100%;height:600px;border:0;';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer';
+      wrap.appendChild(iframe);
+      loaded = true;
+    }
+  });
+})();
+</script>
+
+<footer role="contentinfo">
+  <div class="footer-name">Dr. Mit Panchani</div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#specialties">Specialties</a></li>
+    <li><a href="#telemedicine">Telemedicine</a></li>
+    <li><a href="mailto:reach@drmjp93.in">reach@drmjp93.in</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Dr. Mit Panchani · MBBS, MD Medicine, PGCIH, Fellow 2D Echo · All rights reserved.</div>
+  <div style="margin-top:10px;font-size:0.8rem;color:rgba(255,255,255,0.25);">
+    Visitors: <span id="visitorCount">—</span>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ════════════════════════════ JS ═════════════════════════════ -->
+<script>
+/* Intersection Observer — reveal on scroll */
+(function(){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  },{ threshold:0.12 });
+  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+})();
+
+/* Counter animation — loads from /stats.json so numbers stay live */
+(function(){
+  // Fallback values if fetch fails
+  const fallback = {
+    's-cases': 17530,
+    's-echo':  1711,
+    's-fit':   1676,
+    's-adm':   555
+  };
+  const keyMap = {
+    's-cases': 'cases_attended',
+    's-echo':  'echo_studies',
+    's-fit':   'surgical_fitness_given',
+    's-adm':   'admissions'
+  };
+  const statsP = fetch('/stats.json?_='+Date.now())
+    .then(r=>r.ok?r.json():{})
+    .catch(()=>({}));
+
+  const stats_promise = statsP.then(data=>{
+    const resolved = {};
+    Object.keys(fallback).forEach(id=>{
+      const jsonKey = keyMap[id];
+      resolved[id] = (data[jsonKey] !== undefined) ? Number(data[jsonKey]) : fallback[id];
+    });
+    return resolved;
+  });
+  function ease(x){ return 1 - Math.pow(1-x, 3); }
+  function animCount(el, to){
+    const dur = 1800 + Math.random()*600;
+    const start = performance.now();
+    function frame(now){
+      const p = Math.min((now-start)/dur, 1);
+      el.textContent = Math.floor(to * ease(p)).toLocaleString();
+      if(p<1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        stats_promise.then(stats=>{
+          Object.entries(stats).forEach(([id,val])=>{
+            const el = document.getElementById(id);
+            if(el) animCount(el, val);
+          });
+          // also update the "about" paragraph inline numbers
+          const abMap = {'ab-cases':'s-cases','ab-echo':'s-echo','ab-fit':'s-fit'};
+          Object.entries(abMap).forEach(([abId, statId])=>{
+            const el = document.getElementById(abId);
+            const src = document.getElementById(statId);
+            // just set text (no animation in paragraph — too distracting)
+            if(el && stats[statId] !== undefined) el.textContent = Number(stats[statId]).toLocaleString();
+          });
+        });
+        io.disconnect();
+      }
+    });
+  },{ threshold:0.3 });
+
+  const strip = document.querySelector('.stats-strip');
+  if(strip) io.observe(strip);
+})();
+
+/* Accordion */
+document.querySelectorAll('.acc-trigger').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const body = btn.nextElementSibling;
+    const open = btn.getAttribute('aria-expanded')==='true';
+    btn.setAttribute('aria-expanded', String(!open));
+    body.style.display = open ? 'none':'block';
+  });
+});
+
+/* Amount presets */
+(function(){
+  const presets = document.querySelectorAll('.amt-preset');
+  const qrAmt = document.getElementById('qrAmt');
+  const qrImg = document.getElementById('qrImg');
+  const UPI = 'drmjp93@upi';
+  const PAYEE = 'Mit J Panchani';
+  const NOTE = 'Telemedicine Consultation';
+
+  function buildUPI(amt){
+    return `upi://pay?pa=${encodeURIComponent(UPI)}&pn=${encodeURIComponent(PAYEE)}&am=${amt}.00&tn=${encodeURIComponent(NOTE)}&cu=INR`;
+  }
+
+  presets.forEach(b=>{
+    b.addEventListener('click',()=>{
+      presets.forEach(p=>p.classList.remove('active'));
+      b.classList.add('active');
+      const amt = b.dataset.val;
+      if(qrAmt) qrAmt.textContent = '₹'+amt;
+      if(qrImg) qrImg.title = buildUPI(amt);
+    });
+  });
+
+  // QR fallback
+  if(qrImg){
+    qrImg.onerror = ()=>{
+      const amt = (document.querySelector('.amt-preset.active')||{dataset:{val:'400'}}).dataset.val || '400';
+      qrImg.src = 'https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl='+encodeURIComponent(buildUPI(amt));
+    };
+  }
+})();
+
+/* Copy UPI */
+document.getElementById('copyUpi')?.addEventListener('click', async()=>{
+  try{
+    await navigator.clipboard.writeText('drmjp93@upi');
+    showToast('UPI ID copied!');
+  } catch(e){ alert('drmjp93@upi'); }
+});
+
+/* Open form */
+document.getElementById('openFormBtn')?.addEventListener('click',()=>{
+  window.open('https://docs.google.com/forms/d/e/1FAIpQLSegoCeodeLpgCAXnSki_0kS74YONXKT_RtRl5jlyX9hAfmtbw/viewform?usp=dialog','_blank');
+});
+
+/* Toast */
+function showToast(msg, ms=1800){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.style.display='block';
+  clearTimeout(t._t); t._t = setTimeout(()=>t.style.display='none', ms);
+}
+</script>
+
+
+<script>
+(function(){
+  const el = document.getElementById('visitorCount');
+  if(!el) return;
+  function toKeycaps(n){
+    const map={'0':'0️⃣','1':'1️⃣','2':'2️⃣','3':'3️⃣','4':'4️⃣','5':'5️⃣','6':'6️⃣','7':'7️⃣','8':'8️⃣','9':'9️⃣'};
+    return String(n).split('').map(c=>map[c]||c).join('');
+  }
+  fetch('https://api.counterapi.dev/v1/drmjp93in/visits/up')
+    .then(r=>r.json())
+    .then(j=>{ if(j&&j.count!==undefined) el.innerHTML=toKeycaps(j.count); else el.textContent='-'; })
+    .catch(()=>el.textContent='-');
+})();
+</script>
+
+</body>
+</html>
