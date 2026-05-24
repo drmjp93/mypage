@@ -1,0 +1,1108 @@
+<!doctype html>
+<html lang="gu">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ડૉ. મિત પાંચાણી | MD મેડિસિન · 2D ઇકોકાર્ડિયોગ્રાફર</title>
+  <meta name="description" content="ડૉ. મિત પાંચાણી — MBBS, MD General Medicine, PGCIH, 2D ઇકો ફેલો. ઇન્ટર્નલ મેડિસિન નિષ્ણાત. OPD અને ટેલીમેડિસિન સલાહ ઉપલબ્ધ."/>
+  <link rel="canonical" href="https://drmjp93.in/gu/"/>
+  <link rel="alternate" hreflang="en" href="https://drmjp93.in/"/>
+  <link rel="alternate" hreflang="hi" href="https://drmjp93.in/hi/"/>
+  <link rel="alternate" hreflang="gu" href="https://drmjp93.in/gu/"/>
+  <link rel="alternate" hreflang="x-default" href="https://drmjp93.in/"/>
+
+  <style>
+    @font-face { font-family:'Cormorant Garamond'; font-display:optional; src:local('Cormorant Garamond'); }
+    @font-face { font-family:'DM Sans'; font-display:optional; src:local('DM Sans'); }
+  </style>
+
+  <meta property="og:title" content="ટેલીમેડિસિન — ડૉ. મિત પાંચાણી"/>
+  <meta property="og:description" content="ડાયાબિટીસ, થાઈરોઇડ, BP, કોલેસ્ટ્રોલ અને કાર્ડિયાક સમસ્યાઓ માટે સરળ ટેલીમેડિસિન સલાહ."/>
+  <meta property="og:url" content="https://drmjp93.in/gu/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="https://drmjp93.in/preview.jpg"/>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Physician",
+    "name":"Dr. Mit Panchani",
+    "medicalSpecialty":["Internal Medicine","Diabetes","Thyroid"],
+    "url":"https://drmjp93.in/gu/",
+    "image":"https://drmjp93.in/preview.jpg",
+    "address":{"@type":"PostalAddress","addressCountry":"IN"},
+    "availableService":{"@type":"MedicalTherapy","name":"Telemedicine Consultation"}
+  }
+  </script>
+
+  <style>
+    /* ── DESIGN TOKENS ─────────────────────────────────────── */
+    :root {
+      --ink:       #0d1117;
+      --ink-mid:   #1e2530;
+      --ink-soft:  #4a5568;
+      --line:      #e2e8f0;
+      --line-faint:#f1f5f9;
+      --cream:     #faf9f7;
+      --paper:     #ffffff;
+      --gold:      #b8964a;
+      --gold-lt:   #d4af6a;
+      --gold-pale: #fdf6e8;
+      --red-alert: #c0392b;
+      --serif:     'Cormorant Garamond', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+      --sans:      'DM Sans', ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body {
+      background:var(--cream);
+      color:var(--ink);
+      font-family:var(--sans);
+      font-size:16px;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* ── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp  { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+    @keyframes scaleIn { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+
+    .reveal {
+      opacity:0; transform:translateY(22px);
+      transition:opacity .65s cubic-bezier(.22,.68,0,1.2), transform .65s cubic-bezier(.22,.68,0,1.2);
+    }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* ── TOP NAV ─────────────────────────────────────────────── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      background:rgba(13,17,23,0.94);
+      backdrop-filter:blur(16px) saturate(180%);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 32px; height:60px;
+    }
+    .nav-brand {
+      font-family:var(--serif); font-size:1.15rem;
+      color:#fff; letter-spacing:0.01em; text-decoration:none;
+    }
+    .nav-brand span { color:var(--gold-lt); font-style:italic; }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a {
+      color:rgba(255,255,255,0.7); text-decoration:none;
+      font-size:0.82rem; font-weight:500;
+      letter-spacing:0.06em; text-transform:uppercase;
+      transition:color .2s;
+    }
+    .nav-links a:hover { color:var(--gold-lt); }
+    .nav-cta {
+      background:var(--gold); color:#fff !important;
+      padding:7px 18px; border-radius:6px; opacity:1 !important;
+      transition:background .2s !important;
+    }
+    .nav-cta:hover { background:var(--gold-lt) !important; color:var(--ink) !important; }
+
+    .lang-switch {
+      display:flex; gap:10px; align-items:center;
+      border-left:1px solid rgba(255,255,255,0.1);
+      padding-left:14px; margin-left:4px;
+    }
+    .lang-link {
+      color:rgba(255,255,255,0.5); text-decoration:none;
+      font-size:0.75rem; font-weight:600;
+      letter-spacing:0.04em; transition:color .15s;
+    }
+    .lang-link:hover { color:var(--gold-lt); }
+    .lang-link.active { color:var(--gold-lt); text-decoration:underline; }
+
+    @media(max-width:700px){
+      nav { padding:0 20px; }
+      .nav-links { gap:16px; }
+      .nav-links li:not(:last-child):not(:nth-last-child(2)) { display:none; }
+      .lang-switch { display:none; }
+    }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    .hero {
+      min-height:100svh; background:var(--ink);
+      display:grid; grid-template-columns:1fr 1fr;
+      align-items:center; position:relative; overflow:hidden;
+      padding-top:60px;
+    }
+    .hero::before {
+      content:''; position:absolute; inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events:none; z-index:0;
+    }
+    .hero::after {
+      content:''; position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(184,150,74,0.04) 1px, transparent 1px),
+        linear-gradient(90deg,rgba(184,150,74,0.04) 1px,transparent 1px);
+      background-size:60px 60px;
+      pointer-events:none; z-index:0;
+    }
+    .hero-left { position:relative; z-index:1; padding:80px 60px 80px 80px; }
+    .hero-eyebrow {
+      font-size:0.72rem; font-weight:600; letter-spacing:0.2em;
+      text-transform:uppercase; color:var(--gold);
+      margin-bottom:20px; display:flex; align-items:center; gap:12px;
+    }
+    .hero-eyebrow::before {
+      content:''; display:inline-block; width:32px; height:1px; background:var(--gold);
+    }
+    .hero-name {
+      font-family:var(--serif);
+      font-size:clamp(3rem,5vw,5.5rem);
+      font-weight:600; color:#fff;
+      line-height:1.05; letter-spacing:-0.02em;
+    }
+    .hero-name em { font-style:italic; color:var(--gold-lt); }
+    .hero-title {
+      font-size:1rem; font-weight:400;
+      color:rgba(255,255,255,0.55);
+      margin-top:18px; line-height:1.6; max-width:420px;
+    }
+    .hero-degrees { margin-top:28px; display:flex; flex-wrap:wrap; gap:8px; }
+    .degree-pill {
+      font-size:0.75rem; font-weight:500;
+      padding:5px 14px; border-radius:100px;
+      border:1px solid rgba(184,150,74,0.35);
+      color:var(--gold-lt); background:rgba(184,150,74,0.07);
+      letter-spacing:0.04em;
+    }
+    .hero-actions { margin-top:40px; display:flex; gap:14px; flex-wrap:wrap; }
+    .btn-primary {
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--gold); color:#fff; text-decoration:none;
+      font-weight:600; font-size:0.9rem; padding:14px 26px;
+      border-radius:8px; transition:background .18s,transform .15s;
+      letter-spacing:0.02em;
+    }
+    .btn-primary:hover { background:var(--gold-lt); color:var(--ink); transform:translateY(-2px); }
+    .btn-ghost {
+      display:inline-flex; align-items:center; gap:8px;
+      background:transparent; color:rgba(255,255,255,0.7); text-decoration:none;
+      font-weight:500; font-size:0.9rem; padding:14px 26px;
+      border-radius:8px; border:1px solid rgba(255,255,255,0.15);
+      transition:border-color .18s,color .18s,transform .15s;
+    }
+    .btn-ghost:hover { border-color:var(--gold); color:var(--gold-lt); transform:translateY(-2px); }
+
+    .hero-right {
+      position:relative; z-index:1;
+      display:flex; align-items:center; justify-content:center;
+      padding:80px 80px 80px 20px;
+    }
+    .photo-frame { position:relative; width:340px; height:420px; }
+    .photo-frame::before {
+      content:''; position:absolute; top:-14px; right:-14px;
+      width:100%; height:100%;
+      border:1.5px solid rgba(184,150,74,0.4);
+      border-radius:6px; z-index:0;
+    }
+    .photo-frame img {
+      position:relative; z-index:1;
+      width:100%; height:100%; object-fit:cover; object-position:50% 8%;
+      border-radius:6px; display:block; background:#1e2530;
+    }
+    .photo-frame::after {
+      content:''; position:absolute; bottom:0; left:0; right:0; z-index:2;
+      height:40%; background:linear-gradient(transparent,rgba(13,17,23,0.3));
+      border-radius:0 0 6px 6px; pointer-events:none;
+    }
+
+    @media(max-width:900px){
+      .hero { grid-template-columns:1fr; padding-top:60px; }
+      .hero-right { display:none; }
+      .hero-left { padding:60px 28px; }
+    }
+
+    /* ── STATS STRIP ─────────────────────────────────────────── */
+    .stats-strip { background:var(--ink-mid); padding:36px 0; }
+    .stats-inner {
+      max-width:900px; margin:0 auto;
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:0; padding:0 32px;
+    }
+    .stat-item { text-align:center; padding:8px 20px; position:relative; }
+    .stat-item+.stat-item::before {
+      content:''; position:absolute; left:0; top:20%; bottom:20%;
+      width:1px; background:rgba(255,255,255,0.08);
+    }
+    .stat-num {
+      font-family:var(--serif);
+      font-size:clamp(1.9rem,3vw,2.8rem);
+      font-weight:600; color:var(--gold-lt);
+      display:block; line-height:1.1;
+    }
+    .stat-label {
+      font-size:0.72rem; font-weight:500;
+      letter-spacing:0.1em; text-transform:uppercase;
+      color:rgba(255,255,255,0.45); margin-top:6px; display:block;
+    }
+    @media(max-width:600px){
+      .stats-inner { grid-template-columns:repeat(2,1fr); }
+      .stat-item+.stat-item::before { display:none; }
+    }
+
+    /* ── SECTION WRAPPER ─────────────────────────────────────── */
+    section { padding:80px 32px; }
+    .section-inner { max-width:960px; margin:0 auto; }
+    .section-tag {
+      font-size:0.68rem; font-weight:600;
+      letter-spacing:0.22em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:12px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .section-tag::before {
+      content:''; width:24px; height:1px;
+      background:var(--gold); display:inline-block;
+    }
+    .section-heading {
+      font-family:var(--serif);
+      font-size:clamp(2rem,4vw,3.2rem);
+      font-weight:600; color:var(--ink);
+      line-height:1.15; letter-spacing:-0.02em;
+    }
+    .section-heading em { color:var(--gold); font-style:italic; }
+    .section-divider {
+      width:48px; height:2px; background:var(--gold);
+      margin:20px 0 36px; transform-origin:left;
+      animation:scaleIn .8s ease-out both;
+    }
+
+    /* ── ABOUT ───────────────────────────────────────────────── */
+    #about { background:var(--cream); }
+    .about-grid {
+      display:grid; grid-template-columns:1.2fr 1fr;
+      gap:72px; align-items:start;
+    }
+    .about-body p {
+      font-size:1.05rem; color:var(--ink-soft);
+      line-height:1.8; margin-bottom:18px;
+    }
+    .about-body p strong { color:var(--ink); font-weight:600; }
+    .qual-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
+    .qual-list li {
+      display:flex; align-items:flex-start; gap:14px;
+      padding:14px 18px; background:var(--paper);
+      border-radius:10px; border:1px solid var(--line);
+      box-shadow:0 2px 8px rgba(0,0,0,0.03);
+    }
+    .qual-icon { font-size:1.3rem; flex:0 0 auto; line-height:1; }
+    .qual-info .qual-deg { font-weight:600; font-size:0.95rem; color:var(--ink); display:block; }
+    .qual-info .qual-desc { font-size:0.82rem; color:var(--ink-soft); display:block; margin-top:2px; }
+    @media(max-width:700px){ .about-grid { grid-template-columns:1fr; gap:40px; } }
+
+    /* ── EXPERIENCE ──────────────────────────────────────────── */
+    #experience { background:var(--paper); }
+    .exp-timeline { position:relative; padding-left:32px; }
+    .exp-timeline::before {
+      content:''; position:absolute; left:6px; top:8px; bottom:8px;
+      width:1px; background:var(--line);
+    }
+    .exp-item { position:relative; margin-bottom:36px; }
+    .exp-item:last-child { margin-bottom:0; }
+    .exp-dot {
+      position:absolute; left:-32px; top:4px;
+      width:13px; height:13px; border-radius:50%;
+      background:var(--gold); border:2px solid var(--paper);
+      box-shadow:0 0 0 3px rgba(184,150,74,0.2);
+    }
+    .exp-role { font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:4px; }
+    .exp-place { font-size:0.85rem; color:var(--gold); font-weight:600; margin-bottom:8px; }
+    .exp-desc { font-size:0.9rem; color:var(--ink-soft); line-height:1.7; }
+
+    /* ── SPECIALTIES ─────────────────────────────────────────── */
+    #specialties { background:var(--cream); }
+    .spec-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      gap:20px; margin-top:8px;
+    }
+    .spec-card {
+      background:var(--paper); border-radius:14px;
+      border:1px solid var(--line); padding:28px 24px;
+      transition:border-color .2s, box-shadow .2s, transform .2s;
+      box-shadow:0 2px 12px rgba(0,0,0,0.03);
+    }
+    .spec-card:hover {
+      border-color:var(--gold); transform:translateY(-4px);
+      box-shadow:0 12px 32px rgba(184,150,74,0.12);
+    }
+    .spec-icon { font-size:2rem; display:block; margin-bottom:16px; }
+    .spec-name { font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:10px; }
+    .spec-desc { font-size:0.86rem; color:var(--ink-soft); line-height:1.65; }
+
+    /* ── TELEMEDICINE ────────────────────────────────────────── */
+    #telemedicine { background:var(--paper); }
+    .tele-layout {
+      display:grid; grid-template-columns:1.1fr 0.9fr;
+      gap:64px; align-items:start;
+    }
+    @media(max-width:800px){ .tele-layout { grid-template-columns:1fr; gap:40px; } }
+
+    .tele-intro { font-size:1rem; color:var(--ink-soft); line-height:1.75; margin-bottom:28px; }
+    .tele-features { list-style:none; display:flex; flex-direction:column; gap:14px; margin-bottom:32px; }
+    .tele-features li {
+      display:flex; align-items:flex-start; gap:14px;
+      font-size:0.92rem; color:var(--ink-soft); line-height:1.6;
+    }
+    .fi { font-size:1.2rem; flex:0 0 auto; margin-top:1px; }
+
+    .emergency-bar {
+      background:#fff5f5; border:1px solid #fecaca;
+      border-radius:10px; padding:14px 18px;
+      font-size:0.85rem; color:#991b1b; margin-bottom:24px;
+      line-height:1.6;
+    }
+
+    /* Accordion */
+    .acc-list { display:flex; flex-direction:column; gap:10px; }
+    .acc-item { border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+    .acc-trigger {
+      width:100%; background:var(--paper); border:none; cursor:pointer;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:14px 18px; font-size:0.9rem; font-weight:600;
+      color:var(--ink); font-family:var(--sans); text-align:left;
+    }
+    .acc-trigger:hover { background:var(--line-faint); }
+    .acc-body { display:none; padding:14px 18px; background:var(--line-faint); font-size:0.87rem; color:var(--ink-soft); line-height:1.75; }
+    .acc-body ul, .acc-body ol { padding-left:18px; }
+    .acc-body li { margin-bottom:6px; }
+    .arrow { font-size:0.8rem; transition:transform .2s; }
+    .acc-trigger[aria-expanded="true"] .arrow { transform:rotate(180deg); }
+
+    /* Booking card */
+    .booking-card {
+      background:var(--paper); border-radius:18px;
+      border:1px solid var(--line); padding:32px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.07);
+      position:sticky; top:80px;
+    }
+    .booking-card h3 { font-family:var(--serif); font-size:1.6rem; color:var(--ink); margin-bottom:20px; }
+    .price-row { display:flex; align-items:baseline; gap:12px; margin-bottom:18px; }
+    .price-main { font-family:var(--serif); font-size:2.8rem; font-weight:600; color:var(--ink); }
+    .price-note { font-size:0.85rem; color:var(--ink-soft); }
+    .book-btn {
+      display:block; width:100%; background:var(--gold); color:#fff;
+      text-align:center; padding:16px; border-radius:10px;
+      font-weight:700; font-size:1rem; text-decoration:none;
+      transition:background .18s, transform .15s; letter-spacing:0.02em;
+    }
+    .book-btn:hover { background:var(--gold-lt); color:var(--ink); transform:translateY(-2px); }
+
+    /* ── PAYMENT ─────────────────────────────────────────────── */
+    #payment { background:var(--cream); }
+    .pay-layout {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:40px; align-items:start;
+    }
+    @media(max-width:800px){ .pay-layout { grid-template-columns:1fr; } }
+
+    .pay-rules-card {
+      background:var(--paper); border-radius:16px;
+      border:1px solid var(--line); padding:28px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.04);
+    }
+    .pay-rules-card h3 { font-family:var(--serif); font-size:1.4rem; color:var(--ink); margin-bottom:20px; }
+    .rules-section { margin-bottom:20px; }
+    .rules-section:last-child { margin-bottom:0; }
+    .rules-section h4 { font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+    .rules-section ul { padding-left:18px; font-size:0.87rem; color:var(--ink-soft); line-height:1.75; }
+    .rules-section li { margin-bottom:6px; }
+
+    .pay-action-card {
+      background:var(--paper); border-radius:16px;
+      border:1px solid var(--line); padding:28px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.04);
+    }
+    .payee-alert {
+      background:#f0fdf4; border:1px solid #86efac; border-radius:10px;
+      padding:12px 16px; font-size:0.85rem; color:#166534;
+      margin-bottom:20px; font-weight:500;
+    }
+    .payee-alert span { font-weight:700; }
+    .amount-select { margin-bottom:20px; }
+    .amount-select h4 { font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:12px; }
+    .preset-row { display:flex; gap:10px; }
+    .amt-preset {
+      flex:1; padding:12px 8px; border-radius:10px;
+      border:2px solid var(--line); background:var(--paper);
+      cursor:pointer; font-family:var(--sans); font-weight:700;
+      font-size:0.95rem; color:var(--ink); transition:all .15s;
+      text-align:center;
+    }
+    .amt-preset:hover { border-color:var(--gold); }
+    .amt-preset.active { border-color:var(--gold); background:var(--gold-pale); color:var(--gold); }
+
+    .upi-display {
+      display:flex; align-items:center; justify-content:space-between;
+      background:var(--line-faint); border-radius:10px;
+      padding:14px 16px; margin-bottom:20px;
+      border:1px solid var(--line);
+    }
+    .upi-id { font-weight:700; font-size:1rem; color:var(--ink); font-family:monospace; }
+    .copy-btn {
+      background:var(--gold); color:#fff; border:none; cursor:pointer;
+      padding:7px 14px; border-radius:7px; font-size:0.8rem;
+      font-weight:600; font-family:var(--sans); transition:background .15s;
+    }
+    .copy-btn:hover { background:var(--gold-lt); }
+    .qr-section { display:flex; justify-content:center; margin-bottom:20px; }
+    .qr-wrap { text-align:center; }
+    .qr-wrap img { width:200px; height:200px; border-radius:12px; border:1px solid var(--line); display:block; }
+    .qr-label { font-size:0.8rem; color:var(--ink-soft); margin-top:8px; }
+
+    .after-pay-btn {
+      width:100%; background:var(--ink); color:#fff; border:none;
+      cursor:pointer; display:flex; justify-content:space-between;
+      align-items:center; padding:16px 20px; border-radius:12px;
+      font-family:var(--sans); font-size:0.95rem; font-weight:600;
+      transition:background .18s; text-align:left;
+    }
+    .after-pay-btn:hover { background:var(--ink-mid); }
+    .badge {
+      background:var(--red-alert); color:#fff;
+      font-size:0.7rem; font-weight:700;
+      padding:4px 10px; border-radius:100px;
+      letter-spacing:0.06em; white-space:nowrap;
+    }
+
+    /* ── TOOLS ───────────────────────────────────────────────── */
+    #tools { background:var(--cream); }
+    #ldl-embed-card {
+      border-radius:14px; border:1px solid var(--line);
+      background:var(--paper); overflow:hidden;
+      box-shadow:0 4px 18px rgba(0,0,0,0.04);
+    }
+    #ldl-embed-card summary::-webkit-details-marker { display:none; }
+    #ldl-embed-card summary::marker { content:none; }
+    #ldl-embed-card summary { list-style:none; cursor:pointer; display:flex; align-items:stretch; outline:none; -webkit-tap-highlight-color:transparent; }
+    #ldl-embed-card summary:hover { background:var(--line-faint); transition:background .15s; }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background:var(--ink); color:rgba(255,255,255,0.6);
+      padding:48px 32px; text-align:center;
+    }
+    .footer-name {
+      font-family:var(--serif); font-size:1.6rem;
+      color:#fff; margin-bottom:20px;
+    }
+    .footer-links {
+      list-style:none; display:flex; flex-wrap:wrap;
+      justify-content:center; gap:8px 24px; margin-bottom:24px;
+    }
+    .footer-links a {
+      color:rgba(255,255,255,0.5); text-decoration:none;
+      font-size:0.85rem; transition:color .15s;
+    }
+    .footer-links a:hover { color:var(--gold-lt); }
+    .footer-copy { font-size:0.78rem; color:rgba(255,255,255,0.3); }
+
+    /* ── TOAST ───────────────────────────────────────────────── */
+    #toast {
+      display:none; position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+      background:var(--ink); color:#fff; padding:10px 20px;
+      border-radius:8px; font-size:0.88rem; z-index:9999;
+      box-shadow:0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    @media(max-width:700px){
+      section { padding:56px 20px; }
+      .booking-card { position:static; }
+      nav { padding:0 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════ NAV ══════════════════════════ -->
+<nav role="navigation" aria-label="મુખ્ય નેવિગેશન">
+  <a href="/gu/" class="nav-brand">ડૉ. <span>મિત પાંચાણી</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">વિશે</a></li>
+    <li><a href="#experience">અનુભવ</a></li>
+    <li><a href="#specialties">વિશેષતા</a></li>
+    <li><a href="#telemedicine" class="nav-cta">ટેલીમેડિસિન</a></li>
+  </ul>
+  <div class="lang-switch">
+    <a href="/" class="lang-link">EN</a>
+    <a href="/hi/" class="lang-link">HI</a>
+    <a href="/gu/" class="lang-link active">GU</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════ HERO ══════════════════════════ -->
+<section class="hero" aria-label="પ્રોફાઇલ">
+  <div class="hero-left">
+    <div class="hero-eyebrow">ઇન્ટર્નલ મેડિસિન નિષ્ણાત · અમદાવાદ</div>
+    <h1 class="hero-name">ડૉ. મિત<br><em>પાંચાણી</em></h1>
+    <p class="hero-title">MD ફિઝિશિયન · 2D ઇકોકાર્ડિયોગ્રાફર<br>ડાયાબિટીસ, થાઈરોઇડ, બ્લડ પ્રેશર, શ્વાસ અને ક્રોનિક રોગો માટે OPD અને ટેલીમેડિસિન સેવા.</p>
+    <div class="hero-degrees">
+      <span class="degree-pill">MBBS</span>
+      <span class="degree-pill">MD General Medicine</span>
+      <span class="degree-pill">PGCIH (MSU)</span>
+      <span class="degree-pill">2D Echo Fellow</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#telemedicine" class="btn-primary">↗ ટેલિકોન્સલ્ટેશન દ્વારા સલાહ બુક કરો</a>
+      <a href="#about" class="btn-ghost">વધુ જાણો</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-frame">
+      <img src="/myphoto.jpg" alt="ડૉ. મિત પાંચાણી — ઇન્ટર્નલ મેડિસિન" loading="eager"/>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ STATS ══════════════════════════ -->
+<div class="stats-strip" role="region" aria-label="ક્લિનિકલ આંકડા">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num" id="s-cases">—</span>
+      <span class="stat-label">કેસો સંભાળ્યા</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" id="s-echo">—</span>
+      <span class="stat-label">2D ઇકો</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" id="s-fit">—</span>
+      <span class="stat-label">ફિટનેસ સર્ટિ.</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" id="s-adm">—</span>
+      <span class="stat-label">દાખલ કેસ</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ ABOUT ══════════════════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-tag">પ્રોફાઇલ</div>
+    <h2 class="section-heading reveal">મારા <em>વિશે</em></h2>
+    <div class="section-divider reveal"></div>
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>
+          હું MD ફિઝિશિયન છું — <strong>શ્વાસ, ડાયાબિટીસ, થાઈરોઇડ, કિડની, ન્યૂરોલોજીકલ, બ્લડ પ્રેશર</strong> અને અન્ય ક્રોનિક રોગોની OPD આધારિત સારવાર કરું છું.
+        </p>
+        <p>
+          અત્યાર સુધી <strong id="ab-cases">—</strong>+ કેસ, <strong id="ab-echo">—</strong>+ 2D ઇકો અભ્યાસ અને <strong id="ab-fit">—</strong>+ સર્જિકલ ફિટનેસ પ્રમાણપત્ર. ECG અને 2D ઇકોકાર્ડિયોગ્રાફીમાં વિશેષ અનુભવ.
+        </p>
+        <p>
+          ગર્ભાવસ્થા દરમ્યાન ડાયાબિટીસ, થાઈરોઇડ અને BP ની સારવારનો અનુભવ. તમામ નિર્ણયો <strong>પુરાવા-આધારિત ચિકિત્સા</strong> પ્રમાણે.
+        </p>
+      </div>
+      <div class="reveal">
+        <ul class="qual-list">
+          <li>
+            <span class="qual-icon">🎓</span>
+            <span class="qual-info">
+              <span class="qual-deg">MBBS</span>
+              <span class="qual-desc">અમદાવાદ</span>
+            </span>
+          </li>
+          <li>
+            <span class="qual-icon">🏥</span>
+            <span class="qual-info">
+              <span class="qual-deg">MD (General Medicine)</span>
+              <span class="qual-desc">સુરત</span>
+            </span>
+          </li>
+          <li>
+            <span class="qual-icon">📘</span>
+            <span class="qual-info">
+              <span class="qual-deg">PGCIH (MSU)</span>
+              <span class="qual-desc">વડોદરા</span>
+            </span>
+          </li>
+          <li>
+            <span class="qual-icon">❤️</span>
+            <span class="qual-info">
+              <span class="qual-deg">2D ઇકો ફેલોશિપ (CIMS)</span>
+              <span class="qual-desc">અમદાવાદ</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ EXPERIENCE ═════════════════════ -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-tag">ક્લિનિકલ અનુભવ</div>
+    <h2 class="section-heading reveal">વ્યાવસાયિક <em>પ્રવાસ</em></h2>
+    <div class="section-divider reveal"></div>
+    <div class="exp-timeline reveal">
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-role">MD ફિઝિશિયન</div>
+        <div class="exp-place">SMIMER, સુરત</div>
+        <div class="exp-desc">General Medicine વિભાગ — OPD, IPD, ICU, ઇમર્જન્સી. ડાયાબિટીસ, CKD, ન્યૂમોનિયા, TIA, MI, CCF, AKI, ટ્યૂબ ચેસ્ટ ડ્રેઇનેજ, LP, સ્ટ્રોક, ગ્રામ-નેગેટિવ સેપ્સિસ જેવા ગંભીર કેસ.</div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-role">2D ઇકોકાર્ડિયોગ્રાફી ફેલો</div>
+        <div class="exp-place">CIMS Hospital, અમદાવાદ</div>
+        <div class="exp-desc">2D ઇકો, ડોપ્લર, LV/RV ફંક્શન, valvular disease, pericardial effusion.</div>
+      </div>
+      
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-role">PGCIH – Industrial Health</div>
+        <div class="exp-place">MSU, Baroda</div>
+        <div class="exp-desc">Occupational Health, Industrial Toxicology, Ergonomics, Workplace Safety.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ SPECIALTIES ════════════════════ -->
+<section id="specialties">
+  <div class="section-inner">
+    <div class="section-tag">ક્ષેત્ર</div>
+    <h2 class="section-heading reveal">સારવારની <em>વિશેષતા</em></h2>
+    <div class="section-divider reveal"></div>
+    <div class="spec-grid">
+      <div class="spec-card reveal">
+        <span class="spec-icon">🫁</span>
+        <div class="spec-name">શ્વાસ સંબંધિત રોગ</div>
+        <p class="spec-desc">અસ્થમા, COPD, વારંવાર ઇન્ફેક્શન, ઉધરસ, ઘરઘર — ક્રોનિક management.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🩺</span>
+        <div class="spec-name">ડાયાબિટીસ</div>
+        <p class="spec-desc">Type 1 & Type 2 management, HbA1c monitoring, dyslipidaemia, દવા ઑપ્ટિમાઇઝ, જીવનશૈલી સલાહ.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🦋</span>
+        <div class="spec-name">થાઈરોઇડ</div>
+        <p class="spec-desc">Hypothyroidism & hyperthyroidism, thyroid function monitoring, dose titration.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">💉</span>
+        <div class="spec-name">હાઈ બ્લડ પ્રેશર</div>
+        <p class="spec-desc">BP management, anti-hypertensive ઑપ્ટિમાઇઝ, cardiovascular risk assessment.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🦴</span>
+        <div class="spec-name">સંધિવા (RA)</div>
+        <p class="spec-desc">Long-term RA management, DMARD follow-up, joint monitoring.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🌀</span>
+        <div class="spec-name">Vertigo & ન્યૂરોલોજી</div>
+        <p class="spec-desc">Vertigo, BPPV, vestibular disorders, outpatient neurological follow-up.</p>
+      </div>
+      <div class="spec-card reveal">
+        <span class="spec-icon">🤰</span>
+        <div class="spec-name">ગર્ભાવસ્થા Medicine</div>
+        <p class="spec-desc">Gestational DM, thyroid & BP in pregnancy — non-emergency follow-up, medication review, monitoring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ TELEMEDICINE ═══════════════════ -->
+<section id="telemedicine">
+  <div class="section-inner">
+    <div class="tele-layout">
+      <div>
+        <div class="section-tag">ઑનલાઇન સલાહ</div>
+        <h2 class="section-heading reveal">ઘેર બેઠા<br><em>સલાહ લો.</em></h2>
+        <div class="section-divider reveal"></div>
+
+        <div class="emergency-bar reveal">
+          ⚠️ ઇમર્જન્સી? છાતીનો દુઃખાવો, ગંભીર શ્વાસ, નબળાઈ, seizures — નજીકની હૉસ્પિટલ જાઓ. આ ઇમર્જન્સી સેવા નથી.
+        </div>
+
+        <p class="tele-intro reveal">
+          ડૉ. પાંચાણી સાથે ફોન સલાહ — ક્રોનિક રોગ follow-up, દવા review, અને રિપોર્ટ interpretation ઘેર બેઠા.
+        </p>
+
+        <ul class="tele-features reveal">
+          <li><span class="fi">💊</span>ક્રોનિક disease follow-up: ડાયાબિટીસ, Thyroid, BP, Cholesterol, Cardiac, RA, Vertigo</li>
+          <li><span class="fi">🤰</span>ગર્ભાવસ્થા medicine: Gestational DM, Thyroid & BP (non-emergency)</li>
+          <li><span class="fi">📋</span>Blood report & test review</li>
+          <li><span class="fi">💬</span>Medication review & dose clarification</li>
+        </ul>
+
+        <div class="acc-list reveal">
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              કઈ રીતે કામ કરે? <span class="arrow">▾</span>
+            </button>
+            <div class="acc-body">
+              <ol style="padding-left:18px">
+                <li><strong>Pay Now</strong> ક્લિક કરો અને payment કરો.</li>
+                <li>Payment પછી confirmation form ભરો.</li>
+                <li>ફોન call time slot assign થશે — પછી consultation.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              Follow-up & WhatsApp Policy <span class="arrow">▾</span>
+            </button>
+            <div class="acc-body">
+              <ul>
+                <li><strong>72 કલાકમાં</strong> એ જ સમસ્યા → <strong>મફત</strong></li>
+                <li>72 કલાક પછી → ₹300 per call</li>
+                <li>નવા symptom = નવી paid consultation</li>
+                <li>WhatsApp ફક્ત prescription clarification અને report sharing માટે.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              Refund & Rescheduling <span class="arrow">▾</span>
+            </button>
+            <div class="acc-body">
+              <ul>
+                <li>Slot assign પહેલા request = full refund.</li>
+                <li>Slot confirm પછી no-show = no refund.</li>
+                <li>એક free reschedule.</li>
+                <li>Technical issue અમારી બાજુ → no cost reschedule.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              Consultation પહેલા શું તૈયાર રાખવું? <span class="arrow">▾</span>
+            </button>
+            <div class="acc-body">
+              <ul>
+                <li>ઉંમર, ચાલુ દવા, અને allergy ની માહિતી.</li>
+                <li>તાજા lab reports અથવા imaging.</li>
+                <li>Vitals (BP, Temp, SpO₂) — જો ઉપલબ્ધ હોય.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Booking Card -->
+      <div class="reveal">
+        <div class="booking-card">
+          <h3>Consultation બુક કરો</h3>
+          <div class="price-row">
+            <span class="price-main">₹400</span>
+            <span class="price-note">પ્રથમ consultation · ~15 min</span>
+          </div>
+          <p style="font-size:0.84rem;color:#6b7280;margin-bottom:18px;">Payment પછી appointment confirm. ફોન (અથવા video) દ્વારા consultation.</p>
+          <a href="/gu/pay.html" class="book-btn">Payment → આગળ વધો</a>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eee;">
+            <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9ca3af;margin-bottom:8px;">Terms apply</div>
+            <p style="font-size:0.8rem;color:#9ca3af;line-height:1.6;">Payment + form submission = teleconsultation માટે consent. Medical advice verbal/written information આધારે. Physical examination ક્યારેક ક્યારેક જરૂરી. બધી માહિતી ગોપ​નીય.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ PAYMENT ════════════════════════ -->
+<section id="payment">
+  <div class="section-inner">
+    <div class="section-tag">UPI Payment</div>
+    <h2 class="section-heading reveal"><em>સુરક્ષિત</em> UPI Payment</h2>
+    <div class="section-divider reveal"></div>
+    <div class="pay-layout">
+      <div class="pay-rules-card reveal">
+        <h3>જ​રૂ​રી નિ​યમો</h3>
+        <div class="rules-section">
+          <h4>Consultation પહેલા</h4>
+          <ul>
+            <li>Payment confirm થાય પછી જ appointment.</li>
+            <li><strong>Payment પછી confirmation form ભરો</strong> — ન ભરો તો contact ન થઈ શકે.</li>
+            <li>Emergency cases — નજીકની hospital.</li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <h4>Follow-up</h4>
+          <ul>
+            <li>72 કલાકમાં એ જ problem → <strong>મફત</strong></li>
+            <li>72 કલાક પછી → <strong>₹300</strong> per call</li>
+            <li>નવી problem = નવી paid consultation</li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <h4>Support</h4>
+          <ul>
+            <li>Payment queries: <strong>support@drmjp93.in</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pay-action-card reveal">
+        <div class="payee-alert">
+          ✅ Payment પહેલા payee name confirm કરો: <span>Mit J Panchani</span>
+        </div>
+        <div class="amount-select">
+          <h4>Amount પસંદ કરો</h4>
+          <div class="preset-row">
+            <button class="amt-preset active" data-val="400">₹400 <span style="font-size:0.65rem;font-weight:400;display:block;opacity:0.7">પ્રથમ consultation</span></button>
+            <button class="amt-preset" data-val="300">₹300 <span style="font-size:0.65rem;font-weight:400;display:block;opacity:0.7">Follow-up</span></button>
+          </div>
+        </div>
+        <div class="upi-display">
+          <span class="upi-id" id="upiId">drmjp93@upi</span>
+          <button class="copy-btn" id="copyUpi">Copy UPI</button>
+        </div>
+        <div class="qr-section">
+          <div class="qr-wrap">
+            <img id="qrImg" src="/qr.jpg" alt="UPI QR Code — Dr. Mit Panchani"/>
+            <div class="qr-label">Scan to pay · <span id="qrAmt">₹400</span></div>
+          </div>
+        </div>
+        <button class="after-pay-btn" id="openFormBtn">
+          <span>Payment પછી → Form ભરો <span style="font-size:0.78rem;display:block;opacity:0.6;font-weight:400;margin-top:2px">જ​ ​રૂ​રી — આ number પર contact કરીશું</span></span>
+          <span class="badge">Required</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="tools" style="background:var(--cream);">
+  <div class="section-inner">
+    <div class="section-tag">ક્લિનિકલ ટૂલ્સ</div>
+    <h2 class="section-heading reveal">દર્દીઓ માટે મફત <em>ટૂલ્સ</em></h2>
+    <div class="section-divider reveal"></div>
+    <p style="color:var(--ink-soft);margin-bottom:28px;font-size:0.95rem;" class="reveal">
+      દર્દીઓને તેમના રિપોર્ટ્સ સમજવામાં મદદ કરવા માટે ડૉ. પાંચાણી દ્વારા વિકસાવવામાં આવેલ.
+    </p>
+
+    <div class="reveal" style="border-radius:14px;border:1px solid var(--line);background:var(--paper);overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.04);">
+      <details id="ldl-embed-card">
+        <summary style="list-style:none;cursor:pointer;display:flex;align-items:stretch;outline:none;-webkit-tap-highlight-color:transparent;">
+          <div style="display:flex;gap:16px;align-items:center;padding:18px 20px;flex:1;min-width:0;">
+            <div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.88rem;flex:0 0 48px;box-shadow:0 6px 16px rgba(124,58,237,0.25);">LDL</div>
+            <div style="overflow:hidden;min-width:0;">
+              <div style="font-weight:700;color:var(--ink);font-size:0.98rem;margin-bottom:2px;">LDL કોલેસ્ટ્રોલ કેલ્ક્યુલેટર</div>
+              <div style="font-size:0.82rem;color:var(--ink-soft);">દવાની જરૂર છે કે નહીં તે જાણવા માટે તમારી LDL વેલ્યુ દાખલ કરો · ડૉ. પાંચાણી દ્વારા વિકસિત</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;padding:0 22px;background:linear-gradient(135deg,#ff6b6b,#ff3d71);color:#fff;font-weight:700;font-size:0.85rem;border-radius:0 14px 14px 0;white-space:nowrap;">
+            ખોલવા માટે ટૅપ કરો ▾
+          </div>
+        </summary>
+        <div style="padding:16px;border-top:1px solid var(--line);">
+          <div id="ldl-iframe-wrap" style="width:100%;min-height:520px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--line-faint);">
+            <div style="padding:28px;text-align:center;color:var(--ink-soft);font-size:0.9rem;">કેલ્ક્યુલેટર લોડ થઈ રહ્યું છે…</div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+<style>
+#ldl-embed-card summary::-webkit-details-marker { display:none; }
+#ldl-embed-card summary::marker { content:none; }
+#ldl-embed-card summary:hover { background:var(--line-faint); transition:background .15s; }
+</style>
+<script>
+(function(){
+  const details = document.getElementById('ldl-embed-card');
+  const wrap    = document.getElementById('ldl-iframe-wrap');
+  if(!details || !wrap) return;
+  let loaded = false;
+  details.addEventListener('toggle', ()=>{
+    if(!loaded && details.open){
+      wrap.innerHTML = '';
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://tools.drmjp93.in/ldl/';
+      iframe.title = 'LDL Calculator';
+      iframe.style.cssText = 'width:100%;height:600px;border:0;';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer';
+      wrap.appendChild(iframe);
+      loaded = true;
+    }
+  });
+})();
+</script>
+
+<footer role="contentinfo">
+  <div class="footer-name">ડૉ. મિત પાંચાણી</div>
+  <ul class="footer-links">
+    <li><a href="#about">વિશે</a></li>
+    <li><a href="#experience">અનુભવ</a></li>
+    <li><a href="#specialties">વિશેષતા</a></li>
+    <li><a href="#telemedicine">ટેલીમેડિસિન</a></li>
+    <li><a href="mailto:reach@drmjp93.in">reach@drmjp93.in</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 ડૉ. મિત પાંચાણી · MBBS, MD Medicine, PGCIH, Fellow 2D Echo · સર્વાધિકાર સુરક્ષિત.</div>
+  <div style="margin-top:10px;font-size:0.8rem;color:rgba(255,255,255,0.25);">
+    મુલાકાતીઓ: <span id="visitorCount">—</span>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* Intersection Observer — reveal on scroll */
+(function(){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  },{ threshold:0.12 });
+  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+})();
+
+/* Counter animation — loads from /stats.json so numbers stay live */
+(function(){
+  // Fallback values if fetch fails
+  const fallback = {
+    's-cases': 17530,
+    's-echo':  1711,
+    's-fit':   1676,
+    's-adm':   555
+  };
+  const keyMap = {
+    's-cases': 'cases_attended',
+    's-echo':  'echo_studies',
+    's-fit':   'surgical_fitness_given',
+    's-adm':   'admissions'
+  };
+  const statsP = fetch('/stats.json?_='+Date.now())
+    .then(r=>r.ok?r.json():{})
+    .catch(()=>({}));
+
+  const stats_promise = statsP.then(data=>{
+    const resolved = {};
+    Object.keys(fallback).forEach(id=>{
+      const jsonKey = keyMap[id];
+      resolved[id] = (data[jsonKey] !== undefined) ? Number(data[jsonKey]) : fallback[id];
+    });
+    return resolved;
+  });
+  function ease(x){ return 1 - Math.pow(1-x, 3); }
+  function animCount(el, to){
+    const dur = 1800 + Math.random()*600;
+    const start = performance.now();
+    function frame(now){
+      const p = Math.min((now-start)/dur, 1);
+      el.textContent = Math.floor(to * ease(p)).toLocaleString();
+      if(p<1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        stats_promise.then(stats=>{
+          Object.entries(stats).forEach(([id,val])=>{
+            const el = document.getElementById(id);
+            if(el) animCount(el, val);
+          });
+          // also update the "about" paragraph inline numbers
+          const abMap = {'ab-cases':'s-cases','ab-echo':'s-echo','ab-fit':'s-fit'};
+          Object.entries(abMap).forEach(([abId, statId])=>{
+            const el = document.getElementById(abId);
+            const src = document.getElementById(statId);
+            // just set text (no animation in paragraph — too distracting)
+            if(el && stats[statId] !== undefined) el.textContent = Number(stats[statId]).toLocaleString();
+          });
+        });
+        io.disconnect();
+      }
+    });
+  },{ threshold:0.3 });
+
+  const strip = document.querySelector('.stats-strip');
+  if(strip) io.observe(strip);
+})();
+
+/* Accordion */
+document.querySelectorAll('.acc-trigger').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const body = btn.nextElementSibling;
+    const open = btn.getAttribute('aria-expanded')==='true';
+    btn.setAttribute('aria-expanded', String(!open));
+    body.style.display = open ? 'none':'block';
+  });
+});
+
+/* Amount presets */
+(function(){
+  const presets = document.querySelectorAll('.amt-preset');
+  const qrAmt = document.getElementById('qrAmt');
+  const qrImg = document.getElementById('qrImg');
+  const UPI = 'drmjp93@upi';
+  const PAYEE = 'Mit J Panchani';
+  const NOTE = 'Telemedicine Consultation';
+
+  function buildUPI(amt){
+    return `upi://pay?pa=${encodeURIComponent(UPI)}&pn=${encodeURIComponent(PAYEE)}&am=${amt}.00&tn=${encodeURIComponent(NOTE)}&cu=INR`;
+  }
+
+  presets.forEach(b=>{
+    b.addEventListener('click',()=>{
+      presets.forEach(p=>p.classList.remove('active'));
+      b.classList.add('active');
+      const amt = b.dataset.val;
+      if(qrAmt) qrAmt.textContent = '₹'+amt;
+      if(qrImg) qrImg.title = buildUPI(amt);
+    });
+  });
+
+  // QR fallback
+  if(qrImg){
+    qrImg.onerror = ()=>{
+      const amt = (document.querySelector('.amt-preset.active')||{dataset:{val:'400'}}).dataset.val || '400';
+      qrImg.src = 'https://chart.googleapis.com/chart?cht=qr&chs=240x240&chl='+encodeURIComponent(buildUPI(amt));
+    };
+  }
+})();
+
+/* Copy UPI */
+document.getElementById('copyUpi')?.addEventListener('click', async()=>{
+  try{
+    await navigator.clipboard.writeText('drmjp93@upi');
+    showToast('UPI ID કૉપિ થઈ ગયું!');
+  } catch(e){ alert('drmjp93@upi'); }
+});
+
+/* Open form */
+document.getElementById('openFormBtn')?.addEventListener('click',()=>{
+  window.open('https://docs.google.com/forms/d/e/1FAIpQLSegoCeodeLpgCAXnSki_0kS74YONXKT_RtRl5jlyX9hAfmtbw/viewform?usp=dialog','_blank');
+});
+
+/* Toast */
+function showToast(msg, ms=1800){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.style.display='block';
+  clearTimeout(t._t); t._t = setTimeout(()=>t.style.display='none', ms);
+}
+</script>
+
+<script>
+(function(){
+  const el = document.getElementById('visitorCount');
+  if(!el) return;
+  function toKeycaps(n){
+    const map={'0':'0️⃣','1':'1️⃣','2':'2️⃣','3':'3️⃣','4':'4️⃣','5':'5️⃣','6':'6️⃣','7':'7️⃣','8':'8️⃣','9':'9️⃣'};
+    return String(n).split('').map(c=>map[c]||c).join('');
+  }
+  fetch('https://api.counterapi.dev/v1/drmjp93in/visits/up')
+    .then(r=>r.json())
+    .then(j=>{ if(j&&j.count!==undefined) el.innerHTML=toKeycaps(j.count); else el.textContent='-'; })
+    .catch(()=>el.textContent='-');
+})();
+</script>
+
+</body>
+</html>
