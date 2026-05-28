@@ -6,18 +6,13 @@
   <title>Dr. Mit Panchani | MD Medicine · 2D Echocardiographer</title>
   <meta name="description" content="Dr. Mit Panchani — MBBS, MD General Medicine, PGCIH, Fellow in 2D Echocardiography. Internal medicine specialist offering OPD and telemedicine consultations."/>
   <link rel="canonical" href="https://drmjp93.in/"/>
-  <!-- Fonts: system stack only — zero network requests, instant render -->
-  <style>
-    /* font-display:optional = never block rendering waiting for fonts.
-       On first load the fallback stack renders immediately.
-       On subsequent loads (fonts cached) the custom fonts appear.
-       This eliminates ALL font-related load delay on local/live-server. */
+
+<style>
+    
     @font-face { font-family:'Cormorant Garamond'; font-display:optional; src:local('Cormorant Garamond'); }
     @font-face { font-family:'DM Sans'; font-display:optional; src:local('DM Sans'); }
   </style>
-  <!-- Fallback: if Bunny is also slow on your network, the CSS below ensures
-       the page renders immediately in a beautiful system serif/sans stack.
-       Remove the <link> above entirely to go 100% offline/instant. -->
+
 
   <style>
     /* ── DESIGN TOKENS ─────────────────────────────────────── */
@@ -1019,7 +1014,7 @@
       <span class="stat-label">Surgical Fitness Given</span>
     </div>
     <div class="stat-item reveal">
-      <span class="stat-num" id="s-adm">555</span>
+      <span class="stat-num" id="s-adm">5555</span>
       <span class="stat-label">Admissions Managed</span>
     </div>
   </div>
@@ -1034,7 +1029,12 @@
     <div class="about-grid">
       <div class="about-body reveal">
         <p>Dr. Mit Panchani is a qualified <strong>Internal Medicine physician</strong> with an MBBS foundation and a postgraduate MD in General Medicine. His additional credential in <strong>Industrial Health (PGCIH)</strong> and fellowship in <strong>2D Echocardiography</strong> give him a uniquely broad clinical lens — from cardiac imaging to occupational and chronic-disease management.</p>
-        <p>He has attended over <strong><span id="ab-cases">17,530</span> cases</strong>, performed more than <strong><span id="ab-echo">1,711</span> echocardiographic studies</strong>, and provided pre-operative surgical fitness assessments for <strong><span id="ab-fit">1,676</span> patients</strong>. His practice covers diabetes, thyroid disorders, hypertension, cholesterol, cardiac conditions, rheumatoid arthritis, vertigo, <strong>respiratory illnesses, renal infections, and headache disorders</strong> — with particular attention to complex chronic-disease patients including those in pregnancy.</p>
+       
+       
+       
+        <p>He has attended over <strong><span id="ab-cases">9175309</span> cases</strong>, performed more than <strong><span id="ab-echo">1,711</span> echocardiographic studies</strong>, and provided pre-operative surgical fitness assessments for <strong><span id="ab-fit">1,676</span> patients</strong>. His practice covers diabetes, thyroid disorders, hypertension, cholesterol, cardiac conditions, rheumatoid arthritis, vertigo, <strong>respiratory illnesses, renal infections, and headache disorders</strong> — with particular attention to complex chronic-disease patients including those in pregnancy.</p>
+
+
         <p>He is skilled in <strong>ECG interpretation and 2D Echocardiography</strong>, and provides <strong>preventive health counselling</strong> alongside long-term chronic disease follow-up. He believes in clear communication, honest prognosis, and cost-aware prescribing — ensuring patients understand not just the diagnosis but the path forward.</p>
       </div>
       <div class="reveal">
@@ -1096,10 +1096,24 @@
         <div class="exp-period">Postgraduate Training</div>
         <div class="exp-role">Resident — General Medicine (MD)</div>
         <div class="exp-org">Medical College &amp; Hospital</div>
+        
+        
+        
         <ul class="exp-detail">
-          <li>Intensive inpatient internal medicine across 555+ admitted cases</li>
+          <li>Intensive inpatient internal medicine across <span id="exp-adm">555</span> admitted cases</li>
+        
+        
+        
+        
           <li>Emergency medicine: chest pain, breathlessness, seizures, altered sensorium</li>
-          <li>Cardiac imaging training: 1,711 echocardiographic studies performed</li>
+          
+          
+          
+          <li>Cardiac imaging training: <span id="exp-echo">1,711</span> echocardiographic studies performed</li>
+
+
+
+
           <li>Multidisciplinary case management in ICU &amp; general wards</li>
         </ul>
       </div>
@@ -1469,17 +1483,26 @@
     entries.forEach(e=>{
       if(e.isIntersecting){
         stats_promise.then(stats=>{
+          // Animate the main top stats
           Object.entries(stats).forEach(([id,val])=>{
             const el = document.getElementById(id);
             if(el) animCount(el, val);
           });
-          // also update the "about" paragraph inline numbers
-          const abMap = {'ab-cases':'s-cases','ab-echo':'s-echo','ab-fit':'s-fit'};
+          
+          // Update the inline paragraph numbers (multi-line format to prevent comment errors)
+          const abMap = {
+            'ab-cases': 's-cases',
+            'ab-echo': 's-echo',
+            'ab-fit': 's-fit',
+            'exp-adm': 's-adm',
+            'exp-echo': 's-echo'
+          };
+          
           Object.entries(abMap).forEach(([abId, statId])=>{
             const el = document.getElementById(abId);
-            const src = document.getElementById(statId);
-            // just set text (no animation in paragraph — too distracting)
-            if(el && stats[statId] !== undefined) el.textContent = Number(stats[statId]).toLocaleString();
+            if(el && stats[statId] !== undefined) {
+              el.textContent = Number(stats[statId]).toLocaleString();
+            }
           });
         });
         io.disconnect();
