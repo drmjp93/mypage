@@ -471,11 +471,34 @@
       color:var(--ink);
       line-height:1.2;
     }
+
+    /* ── REFINED WORKPLACE BADGE ─────────────────────────────── */
     .exp-org {
-      font-size:0.88rem;
-      color:var(--ink-soft);
-      margin-top:4px;
+      position: relative;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-mid);
+      background: var(--gold-pale);
+      border: 1px solid rgba(184,150,74,0.25);
+      padding: 5px 14px;
+      border-radius: 6px; /* Clean, professional rounded rectangle */
+      display: inline-flex;
+      align-items: center;
+      margin-top: 8px;
+      letter-spacing: 0.03em;
+      box-shadow: 0 2px 4px rgba(184,150,74,0.05);
+      transition: all 0.25s ease; /* Smooth, natural timing */
     }
+
+    /* Subtle tactile lift only on hover */
+    .exp-org:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(184,150,74,0.12);
+      border-color: rgba(184,150,74,0.5);
+      color: var(--ink);
+      background: var(--paper); /* Brightens slightly on hover */
+    }
+
     .exp-detail {
       margin-top:10px;
       font-size:0.9rem;
@@ -801,6 +824,70 @@
       border-radius:100px;
     }
 
+
+    /* ── EXPERIENCE LOGOS & LAYOUT ───────────────────────────── */
+    .exp-title-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+    .exp-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .exp-title-row .exp-role { margin-bottom: 0; }
+    .exp-title-row .exp-org { margin-top: 2px; }
+
+    /* ── STICKY OVERLAY FOOTER ───────────────────────────────── */
+    .sticky-overlay-footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 90; /* Sits below the nav and toast, above content */
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      transform: translateY(100%);
+      animation: slideUpFooter 0.8s 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .sticky-overlay-footer a {
+      color: var(--gold-lt);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .sticky-overlay-footer a:hover { color: #fff; }
+    @keyframes slideUpFooter { to { transform: translateY(0); } }
+    
+    /* Ensure page content isn't hidden behind the sticky footer */
+    body { padding-bottom: 40px; }
+    
+    @media (max-width: 640px) {
+      .sticky-overlay-footer {
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px 16px;
+        text-align: center;
+      }
+      body { padding-bottom: 60px; }
+    }
+
+
+
     /* ── FOOTER ──────────────────────────────────────────────── */
     footer {
       background: var(--ink);
@@ -1080,6 +1167,8 @@
     <h2 class="section-heading reveal">Work <em>Experience</em></h2>
     <div class="section-divider reveal"></div>
     <div class="exp-timeline reveal">
+      
+      <!-- Current: Telemedicine -->
       <div class="exp-item">
         <div class="exp-period">Current Position</div>
         <div class="exp-role">Telemedicine & OPD Physician</div>
@@ -1088,44 +1177,82 @@
           <li>Chronic disease management: Diabetes, Thyroid, Hypertension, Dyslipidaemia</li>
           <li>Cardiac condition monitoring and medication review</li>
           <li>Telemedicine consultations via phone &amp; video</li>
-          <li>Pre-operative surgical fitness certification</li>
-          <li>2D Echocardiographic studies interpretation</li>
         </ul>
       </div>
+
+      <!-- Current: Santokba -->
       <div class="exp-item">
-        <div class="exp-period">Postgraduate Training</div>
-        <div class="exp-role">Resident — General Medicine (MD)</div>
-        <div class="exp-org">Medical College &amp; Hospital</div>
-        
-        
-        
+        <div class="exp-period">2023 — Present</div>
+        <div class="exp-title-row">
+          <img src="santokba-logo.jpg" alt="Santokba Hospital Logo" class="exp-logo" onerror="this.style.display='none'">
+          <div>
+            <div class="exp-role">Consultant Physician</div>
+            <div class="exp-org">Shreemati Santokba Bhagwati General Hospital, Dholka, Ahmedabad</div>
+          </div>
+        </div>
         <ul class="exp-detail">
-          <li>Intensive inpatient internal medicine across <span id="exp-adm">555</span> admitted cases</li>
-        
-        
-        
-        
-          <li>Emergency medicine: chest pain, breathlessness, seizures, altered sensorium</li>
-          
-          
-          
-          <li>Cardiac imaging training: <span id="exp-echo">1,711</span> echocardiographic studies performed</li>
-
-
-
-
-          <li>Multidisciplinary case management in ICU &amp; general wards</li>
+          <li>Comprehensive OPD and inpatient medical management</li>
+          <li>Pre-operative surgical fitness certification</li>
+          <li>Management of infectious diseases and complex chronic conditions</li>
         </ul>
       </div>
+
+      <!-- Past: AHCH -->
+      <div class="exp-item">
+        <div class="exp-period">Past Experience</div>
+        <div class="exp-title-row">
+          <img src="ahch-logo.jpg" alt="AHCH Logo" class="exp-logo" onerror="this.style.display='none'">
+          <div>
+            <div class="exp-role">Consultant Physician</div>
+            <div class="exp-org">Amba Health Centre & Hospital (AHCH), Trimandir, Adalaj</div>
+          </div>
+        </div>
+        <ul class="exp-detail">
+          <li>Outpatient care and multi-specialty coordination</li>
+          <li>Community-focused internal medicine interventions</li>
+        </ul>
+      </div>
+
+      <!-- Past: Civil Gandhinagar -->
+      <div class="exp-item">
+        <div class="exp-period">Past Experience</div>
+        <div class="exp-title-row">
+          <img src="civil-logo.jpg" alt="Civil Hospital Gandhinagar Logo" class="exp-logo" onerror="this.style.display='none'">
+          <div>
+            <div class="exp-role">Consultant Physician</div>
+            <div class="exp-org">Civil Hospital, Gandhinagar</div>
+          </div>
+        </div>
+        <ul class="exp-detail">
+          <li>High-volume outpatient clinics and acute ward management</li>
+          <li>Public health initiative support and medical emergency response</li>
+        </ul>
+      </div>
+
+      <!-- Fellowship -->
       <div class="exp-item">
         <div class="exp-period">Fellowship</div>
         <div class="exp-role">Fellow — 2D Echocardiography</div>
-        <div class="exp-org">Cardiology Department</div>
+        <div class="exp-org">Cardiology Department, CIMS Hospital, Ahmedabad</div>
         <ul class="exp-detail">
           <li>Transthoracic echocardiography: LV function, valvular disease, pericardial conditions</li>
           <li>Integration of echo findings with clinical history for diagnosis &amp; management</li>
         </ul>
       </div>
+
+      <!-- Residency -->
+      <div class="exp-item">
+        <div class="exp-period">Postgraduate Training</div>
+        <div class="exp-role">Resident — General Medicine (MD)</div>
+        <div class="exp-org">Medical College &amp; Hospital</div>
+        <ul class="exp-detail">
+          <li>Intensive inpatient internal medicine cases</li>
+          <li>Emergency medicine: chest pain, breathlessness, seizures, altered sensorium</li>
+          <li>Cardiac imaging training: echocardiographic studies performed</li>
+          <li>Multidisciplinary case management in ICU &amp; general wards</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1592,6 +1719,13 @@ function showToast(msg, ms=1800){
     .catch(()=>el.textContent='-');
 })();
 </script>
+
+<!-- ════════════════════════════ OVERLAY FOOTER ═════════════════════════ -->
+<div class="sticky-overlay-footer" aria-label="Quick Contact & Copyright">
+  <div>&copy; 2026-2027 Dr. Mit Panchani · All rights reserved.</div>
+  <div>Contact: <a href="mailto:reach@drmjp93.in">reach@drmjp93.in</a></div>
+</div>
+
 
 </body>
 </html>
