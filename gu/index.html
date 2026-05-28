@@ -298,23 +298,143 @@
     @media(max-width:700px){ .about-grid { grid-template-columns:1fr; gap:40px; } }
 
     /* ── EXPERIENCE ──────────────────────────────────────────── */
-    #experience { background:var(--paper); }
-    .exp-timeline { position:relative; padding-left:32px; }
+    #experience { background: var(--paper); }
+    .exp-timeline {
+      position: relative;
+      padding-left: 32px;
+    }
     .exp-timeline::before {
-      content:''; position:absolute; left:6px; top:8px; bottom:8px;
-      width:1px; background:var(--line);
+      content:'';
+      position: absolute;
+      left:6px; top:8px; bottom:8px;
+      width:1px;
+      background: linear-gradient(var(--gold), transparent);
     }
-    .exp-item { position:relative; margin-bottom:36px; }
-    .exp-item:last-child { margin-bottom:0; }
-    .exp-dot {
-      position:absolute; left:-32px; top:4px;
-      width:13px; height:13px; border-radius:50%;
-      background:var(--gold); border:2px solid var(--paper);
-      box-shadow:0 0 0 3px rgba(184,150,74,0.2);
+    .exp-item {
+      position:relative;
+      margin-bottom:36px;
     }
-    .exp-role { font-weight:700; font-size:1rem; color:var(--ink); margin-bottom:4px; }
-    .exp-place { font-size:0.85rem; color:var(--gold); font-weight:600; margin-bottom:8px; }
-    .exp-desc { font-size:0.9rem; color:var(--ink-soft); line-height:1.7; }
+    .exp-item::before {
+      content:'';
+      position:absolute;
+      left:-28px; top:6px;
+      width:10px; height:10px;
+      border-radius:50%;
+      background:var(--gold);
+      border:2px solid var(--paper);
+      box-shadow:0 0 0 3px rgba(184,150,74,0.25);
+    }
+    .exp-period {
+      font-size:0.72rem;
+      font-weight:600;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:4px;
+    }
+    .exp-role {
+      font-family: var(--serif);
+      font-size:1.35rem;
+      font-weight:600;
+      color:var(--ink);
+      line-height:1.2;
+    }
+
+    /* ── EXPERIENCE LOGOS & LAYOUT ───────────────────────────── */
+    .exp-title-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+    .exp-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+    .exp-title-row .exp-role { margin-bottom: 0; }
+    .exp-title-row .exp-place { margin-top: 2px; }
+
+    /* ── REFINED WORKPLACE BADGE ─────────────────────────────── */
+    .exp-place {
+      position: relative;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-mid);
+      background: var(--gold-pale);
+      border: 1px solid rgba(184,150,74,0.25);
+      padding: 5px 14px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      margin-top: 8px;
+      letter-spacing: 0.03em;
+      box-shadow: 0 2px 4px rgba(184,150,74,0.05);
+      transition: all 0.25s ease;
+    }
+    .exp-place:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(184,150,74,0.12);
+      border-color: rgba(184,150,74,0.5);
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    .exp-detail {
+      margin-top:10px;
+      font-size:0.9rem;
+      color:var(--ink-soft);
+      line-height:1.7;
+      padding-left:0;
+      list-style:none;
+    }
+    .exp-detail li { padding:2px 0; }
+    .exp-detail li::before { content:'— '; color:var(--gold); }
+
+    /* ── STICKY OVERLAY FOOTER ───────────────────────────────── */
+    .sticky-overlay-footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 90;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      transform: translateY(100%);
+      animation: slideUpFooter 0.8s 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .sticky-overlay-footer a {
+      color: var(--gold-lt);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .sticky-overlay-footer a:hover { color: #fff; }
+    @keyframes slideUpFooter { to { transform: translateY(0); } }
+    
+    body { padding-bottom: 40px; }
+    
+    @media (max-width: 640px) {
+      .sticky-overlay-footer {
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px 16px;
+        text-align: center;
+      }
+      body { padding-bottom: 60px; }
+    }
 
     /* ── SPECIALTIES ─────────────────────────────────────────── */
     #specialties { background:var(--cream); }
@@ -645,71 +765,92 @@
     <h2 class="section-heading reveal">વ્યાવસાયિક <em>પ્રવાસ</em></h2>
     <div class="section-divider reveal"></div>
     <div class="exp-timeline reveal">
+      
+      <!-- Current: Telemedicine -->
       <div class="exp-item">
-        <div class="exp-dot"></div>
-        <div class="exp-role">MD ફિઝિશિયન</div>
-        <div class="exp-place">SMIMER, સુરત</div>
-        <div class="exp-desc">General Medicine વિભાગ — OPD, IPD, ICU, ઇમર્જન્સી. ડાયાબિટીસ, CKD, ન્યૂમોનિયા, TIA, MI, CCF, AKI, ટ્યૂબ ચેસ્ટ ડ્રેઇનેજ, LP, સ્ટ્રોક, ગ્રામ-નેગેટિવ સેપ્સિસ જેવા ગંભીર કેસ.</div>
+        <div class="exp-period">હાલની કામગીરી</div>
+        <div class="exp-role">ટેલીમેડિસિન અને OPD ફિઝિશિયન</div>
+        <div class="exp-place">સ્વતંત્ર પ્રેક્ટિસ · drmjp93.in</div>
+        <ul class="exp-detail">
+          <li>ક્રોનિક રોગની સારવાર: ડાયાબિટીસ, થાઈરોઇડ, બ્લડ પ્રેશર, કોલેસ્ટ્રોલ</li>
+          <li>હૃદય રોગનું મોનિટરિંગ અને દવાનું માર્ગદર્શન</li>
+          <li>ફોન અને વીડિયો દ્વારા ટેલીમેડિસિન સલાહ</li>
+        </ul>
       </div>
+
+      <!-- Current: Santokba -->
       <div class="exp-item">
-        <div class="exp-dot"></div>
+        <div class="exp-period">2023 — વર્તમાન</div>
+        <div class="exp-title-row">
+          <img src="/santokba-logo.jpg" alt="Santokba Hospital Logo" class="exp-logo" onerror="this.style.display='none'">
+          <div>
+            <div class="exp-role">કન્સલ્ટન્ટ ફિઝિશિયન</div>
+            <div class="exp-place">શ્રીમતી સંતોકબા ભગવતી જનરલ હૉસ્પિટલ, ધોળકા</div>
+          </div>
+        </div>
+        <ul class="exp-detail">
+          <li>OPD અને IPD માં સઘન તબીબી સારવાર</li>
+          <li>ઓપરેશન પહેલાંની સર્જિકલ ફિટનેસ પ્રમાણપત્ર</li>
+          <li>ચેપી રોગો અને જટિલ ક્રોનિક કેસોની સારવાર</li>
+        </ul>
+      </div>
+
+      <!-- Past: AHCH -->
+      <div class="exp-item">
+        <div class="exp-period">ભૂતકાળનો અનુભવ</div>
+        <div class="exp-title-row">
+          <img src="/ahch-logo.jpg" alt="AHCH Logo" class="exp-logo" onerror="this.style.display='none'">
+          <div>
+            <div class="exp-role">કન્સલ્ટન્ટ ફિઝિશિયન</div>
+            <div class="exp-place">અંબા હેલ્થ સેન્ટર એન્ડ હૉસ્પિટલ (AHCH), ત્રિમંદિર, અડાલજ</div>
+          </div>
+        </div>
+        <ul class="exp-detail">
+          <li>OPD સેવાઓ અને મલ્ટિ-સ્પેશિયાલિટી સંકલન</li>
+          <li>સમુદાય-લક્ષી ઇન્ટર્નલ મેડિસિન સારવાર</li>
+        </ul>
+      </div>
+
+      <!-- Past: Civil Gandhinagar -->
+      <div class="exp-item">
+        <div class="exp-period">ભૂતકાળનો અનુભવ</div>
+        <div class="exp-title-row">
+          <img src="/civil-logo.jpg" alt="Civil Hospital Gandhinagar Logo" class="exp-logo" onerror="this.style.display='none'">
+          <div>
+            <div class="exp-role">કન્સલ્ટન્ટ ફિઝિશિયન</div>
+            <div class="exp-place">સિવિલ હૉસ્પિટલ, ગાંધીનગર</div>
+          </div>
+        </div>
+        <ul class="exp-detail">
+          <li>મોટી સંખ્યામાં OPD દર્દીઓની તપાસ અને એક્યુટ વૉર્ડ મેનેજમેન્ટ</li>
+          <li>જાહેર આરોગ્ય પહેલ અને મેડિકલ ઇમર્જન્સી પ્રતિસાદ</li>
+        </ul>
+      </div>
+
+      <!-- Fellowship -->
+      <div class="exp-item">
+        <div class="exp-period">ફેલોશિપ</div>
         <div class="exp-role">2D ઇકોકાર્ડિયોગ્રાફી ફેલો</div>
         <div class="exp-place">CIMS Hospital, અમદાવાદ</div>
-        <div class="exp-desc">2D ઇકો, ડોપ્લર, LV/RV ફંક્શન, valvular disease, pericardial effusion.</div>
+        <ul class="exp-detail">
+          <li>2D ઇકો, ડોપ્લર, LV/RV ફંક્શન, valvular disease, pericardial effusion</li>
+          <li>નિદાન અને સારવાર માટે ક્લિનિકલ હિસ્ટ્રી સાથે ઇકો રિપોર્ટનું સંકલન</li>
+        </ul>
       </div>
-      
-      <div class="exp-item">
-        <div class="exp-dot"></div>
-        <div class="exp-role">PGCIH – Industrial Health</div>
-        <div class="exp-place">MSU, Baroda</div>
-        <div class="exp-desc">Occupational Health, Industrial Toxicology, Ergonomics, Workplace Safety.</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ══════════════════════════════ SPECIALTIES ════════════════════ -->
-<section id="specialties">
-  <div class="section-inner">
-    <div class="section-tag">ક્ષેત્ર</div>
-    <h2 class="section-heading reveal">સારવારની <em>વિશેષતા</em></h2>
-    <div class="section-divider reveal"></div>
-    <div class="spec-grid">
-      <div class="spec-card reveal">
-        <span class="spec-icon">🫁</span>
-        <div class="spec-name">શ્વાસ સંબંધિત રોગ</div>
-        <p class="spec-desc">અસ્થમા, COPD, વારંવાર ઇન્ફેક્શન, ઉધરસ, ઘરઘર — ક્રોનિક management.</p>
+      <!-- Residency -->
+      <div class="exp-item">
+        <div class="exp-period">MD અનુસ્નાતક તાલીમ</div>
+        <div class="exp-role">MD ફિઝિશિયન (રેસિડેન્ટ)</div>
+        <div class="exp-place">SMIMER મેડિકલ કૉલેજ, સુરત</div>
+        <ul class="exp-detail">
+          <li>આશરે <span id="exp-adm">555</span>+ દાખલ દર્દીઓની સઘન સારવાર (IPD/ICU)</li>
+          <li>ઇમર્જન્સી મેડિસિન: છાતીનો દુઃખાવો, શ્વાસ, ખેંચ, બેભાન દર્દીઓની સારવાર</li>
+          <li>કાર્ડિયાક ઇમેજિંગ તાલીમ: <span id="exp-echo">1,711</span>+ 2D ઇકોકાર્ડિયોગ્રાફી સ્ટડીઝ</li>
+          <li>ડાયાબિટીસ, CKD, ન્યૂમોનિયા, સ્ટ્રોક, સેપ્સિસ જેવા ગંભીર કેસોનું મેનેજમેન્ટ</li>
+        </ul>
       </div>
-      <div class="spec-card reveal">
-        <span class="spec-icon">🩺</span>
-        <div class="spec-name">ડાયાબિટીસ</div>
-        <p class="spec-desc">Type 1 & Type 2 management, HbA1c monitoring, dyslipidaemia, દવા ઑપ્ટિમાઇઝ, જીવનશૈલી સલાહ.</p>
-      </div>
-      <div class="spec-card reveal">
-        <span class="spec-icon">🦋</span>
-        <div class="spec-name">થાઈરોઇડ</div>
-        <p class="spec-desc">Hypothyroidism & hyperthyroidism, thyroid function monitoring, dose titration.</p>
-      </div>
-      <div class="spec-card reveal">
-        <span class="spec-icon">💉</span>
-        <div class="spec-name">હાઈ બ્લડ પ્રેશર</div>
-        <p class="spec-desc">BP management, anti-hypertensive ઑપ્ટિમાઇઝ, cardiovascular risk assessment.</p>
-      </div>
-      <div class="spec-card reveal">
-        <span class="spec-icon">🦴</span>
-        <div class="spec-name">સંધિવા (RA)</div>
-        <p class="spec-desc">Long-term RA management, DMARD follow-up, joint monitoring.</p>
-      </div>
-      <div class="spec-card reveal">
-        <span class="spec-icon">🌀</span>
-        <div class="spec-name">Vertigo & ન્યૂરોલોજી</div>
-        <p class="spec-desc">Vertigo, BPPV, vestibular disorders, outpatient neurological follow-up.</p>
-      </div>
-      <div class="spec-card reveal">
-        <span class="spec-icon">🤰</span>
-        <div class="spec-name">ગર્ભાવસ્થા Medicine</div>
-        <p class="spec-desc">Gestational DM, thyroid & BP in pregnancy — non-emergency follow-up, medication review, monitoring.</p>
-      </div>
+
     </div>
   </div>
 </section>
@@ -1008,19 +1149,27 @@
             const el = document.getElementById(id);
             if(el) animCount(el, val);
           });
-          // also update the "about" paragraph inline numbers
-          const abMap = {'ab-cases':'s-cases','ab-echo':'s-echo','ab-fit':'s-fit'};
+          // Update the inline paragraph numbers (multi-line format to prevent comment errors)
+          const abMap = {
+            'ab-cases': 's-cases',
+            'ab-echo': 's-echo',
+            'ab-fit': 's-fit',
+            'exp-adm': 's-adm',
+            'exp-echo': 's-echo'
+          };
+          
           Object.entries(abMap).forEach(([abId, statId])=>{
             const el = document.getElementById(abId);
-            const src = document.getElementById(statId);
-            // just set text (no animation in paragraph — too distracting)
-            if(el && stats[statId] !== undefined) el.textContent = Number(stats[statId]).toLocaleString();
+            if(el && stats[statId] !== undefined) {
+              el.textContent = Number(stats[statId]).toLocaleString();
+            }
           });
         });
         io.disconnect();
       }
     });
   },{ threshold:0.3 });
+
 
   const strip = document.querySelector('.stats-strip');
   if(strip) io.observe(strip);
@@ -1103,6 +1252,12 @@ function showToast(msg, ms=1800){
     .catch(()=>el.textContent='-');
 })();
 </script>
+
+<!-- ════════════════════════════ OVERLAY FOOTER ═════════════════════════ -->
+<div class="sticky-overlay-footer" aria-label="Quick Contact & Copyright">
+  <div>&copy; 2026-2027 ડૉ. મિત પાંચાણી · All rights reserved.</div>
+  <div>સંપર્ક: <a href="mailto:reach@drmjp93.in">reach@drmjp93.in</a></div>
+</div>
 
 </body>
 </html>
